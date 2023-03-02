@@ -1,9 +1,9 @@
-from flask import Flask, json, request, render_template
+from flask import Flask, json, request
 import requests
 
 api = Flask(__name__)
 
-@api.route('/', methods=['GET','POST'])
+@api.route('/color', methods=['GET','POST'])
 def color():
     args = request.args
     red = "&R=" + str(args.get("r"))
@@ -11,7 +11,7 @@ def color():
     blue = "&B=" + str(args.get("b"))
     url = 'http://aurora.local/win' + red + green + blue
     response = requests.post(url)
-    return render_template('index.html')
+    return args
 
 if __name__ == '__main__':
     api.run(debug = True)
