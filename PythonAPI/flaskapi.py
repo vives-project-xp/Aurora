@@ -3,15 +3,20 @@ import requests
 
 api = Flask(__name__)
 
-@api.route('/', methods=['GET','POST'])
+@api.route('/', methods=['GET'])
+def main():
+    return render_template('index.html')
+
+@api.route('/color', methods=['POST', 'GET'])
 def color():
-    args = request.args
-    red = "&R=" + str(args.get("r"))
-    green = "&G=" + str(args.get("g"))
-    blue = "&B=" + str(args.get("b"))
+    json = request.get_json()
+    print(json)
+    red = "&R=" + json["red"]
+    green = "&G=" + json["green"]
+    blue = "&B=" + json["blue"]
     url = 'http://aurora.local/win' + red + green + blue
     response = requests.post(url)
-    return render_template('index.html')
+    return print(type(json))
 
 if __name__ == '__main__':
     api.run(debug = True)
