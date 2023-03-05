@@ -4,7 +4,8 @@ function Calculate(){
         green: document.getElementById("green").value,
         blue: document.getElementById("blue").value,
     }
-    
+
+    console.debug(Date.now());
     fetch("/color", {
         method: 'post',
         body: JSON.stringify(data),
@@ -12,4 +13,5 @@ function Calculate(){
             'Content-Type': 'application/json'
         }
     })
+    console.debug(Date.now());
 }
