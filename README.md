@@ -33,8 +33,10 @@ These are the required software and hardware
  ### Hardware
 
  - ESP32
- - WS2811ALL led strip
+ - WS2812B led strip
  - kabel goot 
+ - breadboard
+ - Voeding
   
 
 ## Installation
@@ -59,3 +61,7 @@ Made by  Glenn Coopman, Aitor Vannevel, thibaut schroyens, Thomas Oddery and Rob
 ## project photos
 
 ![image](https://user-images.githubusercontent.com/83211667/222438233-dfeb06dd-3df8-4e37-b3ea-25aaaac1e787.png)
+
+
+### sfeerbeelden
+![20230309_151527](https://user-images.githubusercontent.com/83211667/224052116-a657af65-2819-487f-a10e-55401445fedb.jpg)
