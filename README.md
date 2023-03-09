@@ -29,14 +29,21 @@ These are the required software and hardware
  ### Software
  
  - Wled
+ - Arduino
+ - HTML
+ - Python
+ - Javascript
  
  ### Hardware
 
  - ESP32
  - WS2812B led strip
  - kabel goot 
+ - 2,5 carre kabels
  - breadboard
  - Voeding
+ - IR sensor
+ - 3d printed brackets
   
 
 ## Installation
