@@ -4,7 +4,7 @@ import datetime
 
 api = Flask(__name__)
 
-@api.route('/', methods=['GET'])
+@api.route('/', methods=['GET', 'POST'])
 def main():
     return render_template('index.html')
 
