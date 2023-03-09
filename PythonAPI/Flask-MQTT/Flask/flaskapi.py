@@ -1,15 +1,13 @@
 from flask import Flask, json, request, render_template
 import requests
-api = Flask(__name__)
 import aurora
-#aurora = Aurora.getClass()
+api = Flask(__name__)
 class FlaskAPI:
     def __init__(self):
         print("flaskapi loaded")
 
     def start():
         print("server starting")
-        #if __name__ == '__main__':
         api.run(host='0.0.0.0')
 
 
@@ -23,5 +21,4 @@ class FlaskAPI:
         aurora.Aurora.setColor(json)
         return render_template('index.html')
         
-    #if __name__ == '__main__':
     api.run(host='0.0.0.0')

@@ -1,7 +1,5 @@
-# python3.6
-
 import random
-
+import aurora
 from paho.mqtt import client as mqtt_client
 
 
@@ -42,5 +40,4 @@ def run():
     client.loop_forever()
 
 
-if __name__ == '__main__':
-    run()
+run()
