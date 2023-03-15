@@ -25,6 +25,7 @@ function Post(page, data){
         //handle response
         info = response.headers.get("info")
         state = document.getElementById("state");
+        console.log(response);
         if(info != null && info == "wrong_url"){
             state.innerText = "Unable to connect\nWrong url";
             state.style.color = "red";

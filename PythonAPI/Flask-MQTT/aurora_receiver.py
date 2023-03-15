@@ -1,10 +1,12 @@
 from flask import Flask, json, request, render_template, make_response
 from flask_mqtt import Mqtt
+from flask_cors import CORS
 import requests
 from aurora_sender import sender
 
 sender = sender()
 app = Flask(__name__)
+CORS(app)
 app.config['MQTT_BROKER_URL'] = 'broker.emqx.io'  # use the free broker from HIVEMQ
 app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
 app.config['MQTT_USERNAME'] = 'Aurora'  # set the username here if you need authentication for the broker
@@ -19,7 +21,8 @@ def main():
     return render_template('index.html')
 
 @app.route('/color', methods=['POST'])
-def http():
+def color():
+    print("request color")
     json = request.get_json()
     sender.SetColor(json)
     return ('', 204)
