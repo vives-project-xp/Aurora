@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+    <script type="text/javascript" src="../static/javascript/script.js"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>This is our Flask server</h1>
+    <p>Wled url</p>
+    <input onchange="Connect()" id="wled">
+    <p class="state" id="state" font-size="5px">status</p>
+    <p>red <br> <input onchange="Color()"  id="red" type="range" min="0" max="255" value="1" class="red" oninput="this.nextElementSibling.value = this.value"><output>0</output></p>
+    <p>green <br> <input onchange="Color()"  id="green" type="range" min="0" max="255" value="1" class="green" oninput="this.nextElementSibling.value = this.value"><output>0</output></p>
+    <p>blue <br> <input onchange="Color()" id="blue" type="range" min="0" max="255" value="1" class="blue" oninput="this.nextElementSibling.value = this.value"><output>0</output></p>
+</body>
+</html>
