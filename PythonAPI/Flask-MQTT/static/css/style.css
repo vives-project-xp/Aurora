@@ -1,0 +1,10 @@
+body {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 200%;
+}
+
+p.state {
+    font-size: 50%;
+}
