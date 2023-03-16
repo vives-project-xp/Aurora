@@ -23,7 +23,6 @@ def main():
 @app.route('/color', methods=['POST'])
 def color():
     json = request.get_json()
-    print(json["wled"])
     sender.SetColor(json)
     return ('', 204)
 

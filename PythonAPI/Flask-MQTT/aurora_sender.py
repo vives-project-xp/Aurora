@@ -22,5 +22,5 @@ class sender:
             red = "&R=" + data["red"]
             green = "&G=" + data["green"]
             blue = "&B=" + data["blue"]
-            url =  self.wled + '/win' + red + green + blue
+            url =  self.wled + 'win' + red + green + blue
             requests.post(url)
