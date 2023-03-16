@@ -1,6 +1,11 @@
-int sensor = 4;              // the pin that the sensor is atteched to
+int sensor = 15;              // the pin that the sensor is atteched to
 int state = LOW;             // by default, no motion detected
 int val = 0;                 // variable to store the sensor status (value)
+
+
+const int periodDuration = 2000;
+
+unsigned long lastPeriodStart;
 
 void setup() {
   pinMode(sensor, INPUT);    // initialize sensor as an input
@@ -8,23 +13,34 @@ void setup() {
   Serial.print("Setup complete");
 }
 
-void loop(){
+void loop() {
   val = analogRead(sensor);   // read sensor value
-  Serial.println(val);
-  if (val == HIGH) {           // check if the sensor is HIGH
-    delay(100);                // delay 100 milliseconds 
-    
-    if (state == LOW) {
-      Serial.println("Motion detected!"); 
-      state = HIGH;       // update variable state to HIGH
+  //Serial.print(val);
+  static int lastValue;
+  static int currentValue;
+  static int detection = 0;
+  currentValue = val;
+ /* Serial.print("    ");
+  Serial.print(currentValue);
+  Serial.print("    ");
+  Serial.println(lastValue);*/
+  if (currentValue >= (lastValue + 100) || currentValue <= (lastValue - 100))
+  {
+    if (detection == 0)
+    {
+      Serial.println("Turn panel on");
     }
-  } 
-  else {
-      delay(100);             // delay 200 milliseconds 
-      
-      if (state == HIGH){
-        Serial.println("Motion stopped!");
-        state = LOW;   // update variable state to LOW
-    }
+    detection = 1;
+    //Serial.println("Detection");
+    lastPeriodStart = millis();
   }
+  else if (millis() - lastPeriodStart >= periodDuration)
+  {
+    if (detection == 1)
+    {
+      Serial.println("Turn panel off");
+    }
+    detection = 0;
+  }
+  lastValue = currentValue;
 }
