@@ -1,0 +1,21 @@
+body {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-size: 200%;
+}
+
+p.state {
+    font-size: 50%;
+}
+
+div {
+    display: flex;
+    justify-content: center ;
+}
+
+div>div{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}

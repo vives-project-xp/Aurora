@@ -10,9 +10,18 @@
 </head>
 <body>
     <h1>This is our Flask server</h1>
-    <p>Wled url</p>
-    <input onchange="Connect()" id="wled">
-    <p class="state" id="state" font-size="5px">status</p>
+    <div>
+        <div>
+            <p>API url</p>
+            <input onchange="Connect()" id="api">
+            <p class="state" id="stateApi" font-size="5px">status</p>
+        </div>
+        <div>
+            <p>Wled url</p>
+            <input onchange="Connect()" id="wled">
+            <p class="state" id="stateWled" font-size="5px">status</p>
+        </div>
+    </div>
     <p>red <br> <input onchange="Color()"  id="red" type="range" min="0" max="255" value="1" class="red" oninput="this.nextElementSibling.value = this.value"><output>0</output></p>
     <p>green <br> <input onchange="Color()"  id="green" type="range" min="0" max="255" value="1" class="green" oninput="this.nextElementSibling.value = this.value"><output>0</output></p>
     <p>blue <br> <input onchange="Color()" id="blue" type="range" min="0" max="255" value="1" class="blue" oninput="this.nextElementSibling.value = this.value"><output>0</output></p>
