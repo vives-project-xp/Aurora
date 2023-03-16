@@ -8,7 +8,6 @@ class sender:
     
     def Connect(self, data):
         self.wled = "http://" + data["wled"] + "/"
-        print(self.wled)
         try:
             requests.post(self.wled)
             print(requests)
@@ -26,5 +25,4 @@ class sender:
             green = "&G=" + data["green"]
             blue = "&B=" + data["blue"]
             url =  self.wled + 'win' + red + green + blue
-            print(url)
             requests.post(url)
