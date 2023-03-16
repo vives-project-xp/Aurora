@@ -11,6 +11,7 @@ class sender:
         print(self.wled)
         try:
             requests.post(self.wled)
+            print(requests)
             self.connected = True
             print("connected to wled")
             return "connected"
