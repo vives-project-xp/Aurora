@@ -8,6 +8,7 @@ class sender:
     
     def Connect(self, data):
         self.wled = "http://" + data["wled"] + "/"
+        print(self.wled)
         try:
             requests.post(self.wled)
             self.connected = True
