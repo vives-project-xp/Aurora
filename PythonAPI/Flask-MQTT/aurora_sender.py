@@ -7,7 +7,7 @@ class sender:
         print("Sender started")
     
     def Connect(self, data):
-        self.wled = "http://" + data["wled"] + ".local/"
+        self.wled = "http://" + data["wled"] + "/"
         try:
             requests.post(self.wled)
             self.connected = True
