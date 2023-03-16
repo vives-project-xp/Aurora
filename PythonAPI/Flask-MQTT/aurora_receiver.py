@@ -3,6 +3,7 @@ from flask_mqtt import Mqtt
 from flask_cors import CORS
 import requests
 from aurora_sender import sender
+import datetime
 
 sender = sender()
 app = Flask(__name__)
@@ -22,6 +23,7 @@ def main():
 
 @app.route('/color', methods=['POST'])
 def color():
+    print("receive", datetime.datetime.today())
     json = request.get_json()
     sender.SetColor(json)
     return ('', 204)
