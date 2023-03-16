@@ -13,12 +13,22 @@ const char broker[] = "broker.emqx.io";
 int        port     = 1883;
 const char topic[]  = "SENSOR_0";
 const char topic2[]  = "SENSOR_1";
-const char topic3[]  = "SENSOR_2";
+const char topic3[]  = "aurora_sensor";
 const char topic4[] = "SENSOR_3";
 
 const long interval = 1000;
 unsigned long previousMillis = 0;
+
+int sensor = 15;              // the pin that the sensor is atteched to
+int state = LOW;             // by default, no motion detected
+int val = 0;                 // variable to store the sensor status (value)
+
+
+const int periodDuration = 2000;
+unsigned long lastPeriodStart;
+
 void setup() {
+  pinMode(sensor, INPUT);    // initialize sensor as an input
   //Initialize serial and wait for port to open:
   Serial.begin(9600);
   while (!Serial) {
@@ -52,13 +62,44 @@ void setup() {
 }
 
 void loop() {
+  mqttClient.poll();
+  val = analogRead(sensor);   // read sensor value
+  //Serial.print(val);
+  static int lastValue;
+  static int currentValue;
+  static bool detection = 0;
+  currentValue = val;
+  /*Serial.print("    ");
+    Serial.print(currentValue);
+    Serial.print("    ");
+    Serial.println(lastValue);*/
+  if (currentValue >= (lastValue + 100) || currentValue <= (lastValue - 100))
+  {
+    if (detection == 0)
+    {
+      Serial.println("Turn panel on");
+    }
+    detection = 1;
+    //Serial.println("Detection");
+    lastPeriodStart = millis();
+  }
+  else if (millis() - lastPeriodStart >= periodDuration)
+  {
+    if (detection == 1)
+    {
+      Serial.println("Turn panel off");
+    }
+    detection = 0;
+  }
+  lastValue = currentValue;
+
+
+
   // call poll() regularly to allow the library to send MQTT keep alives which
   // avoids being disconnected by the broker
   static int Rvalue = 0;
   static int Rvalue2 = 1;
   static int Rvalue3 = 2;
-  mqttClient.poll();
-
   unsigned long currentMillis = millis();
 
   if (currentMillis - previousMillis >= interval) {
@@ -72,7 +113,7 @@ void loop() {
 
     Serial.print("Sending message to topic: ");
     Serial.println(topic);
-    Serial.println(Rvalue);
+    Serial.println(detection);
 
     Serial.print("Sending message to topic: ");
     Serial.println(topic2);
@@ -84,7 +125,7 @@ void loop() {
 
     // send message, the Print interface can be used to set the message contents
     mqttClient.beginMessage(topic);
-    mqttClient.print(Rvalue);
+    mqttClient.print(detection);
     mqttClient.endMessage();
 
     mqttClient.beginMessage(topic2);
