@@ -1,7 +1,7 @@
 import requests
 
 class sender:
-    wled = ""
+    wled = "aurorawled.local"
     connected = False
     def __init__(self):
         print("Sender started")
