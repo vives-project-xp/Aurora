@@ -4,5 +4,10 @@ services:
     build: ./website
     ports:
       - 80:80
-  # api:
-  #   image: python
+  api:
+    build: ./PythonAPI/Flask-MQTT
+    ports:
+      - 5100:5000
+  #  image: python
+  #  volumes:
+  #   - ./PythonAPI/Flask-MQTT/:/python
