@@ -53,4 +53,4 @@ Once docker is installed, you can start our project.
 docker compose up -d --build
 ```
 
-If everything works as it should, you can search for [aurora.local](aurora.local)
+If everything works as it should, you can search for [aurora.local](http://aurora.local/)
