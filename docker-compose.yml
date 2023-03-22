@@ -1,13 +1,12 @@
 version: '3'
 services:
   website:
+    restart: always
     build: ./website
     ports:
       - 80:80
   api:
+    restart: always
     build: ./PythonAPI/Flask-MQTT
     ports:
-      - 5100:5000
-  #  image: python
-  #  volumes:
-  #   - ./PythonAPI/Flask-MQTT/:/python
+      - 5500:5500

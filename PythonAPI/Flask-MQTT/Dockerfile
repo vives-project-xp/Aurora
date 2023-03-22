@@ -5,4 +5,4 @@ COPY requirements.txt ./
 
 RUN pip install -r requirements.txt
 COPY . .
-CMD [ "python", "aurora_receiver.py" ]
+CMD [ "python", "./aurora_receiver.py" ]

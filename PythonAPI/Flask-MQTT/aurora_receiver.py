@@ -19,6 +19,7 @@ mqtt = Mqtt(app)
 
 @app.route('/', methods=['GET'])
 def main():
+    print("connecting...")
     return render_template('index.html')
 
 @app.route('/color', methods=['POST'])
@@ -50,4 +51,4 @@ def handle_subscribe(client, userdata, mid, granted_qos):
           .format(mid, granted_qos)) 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5500)
