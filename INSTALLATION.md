@@ -22,7 +22,7 @@ Save your settings and start the installation.
 Once the installation is finished.
 Insert the sd-card into the Pi and boot it up.
 
-Once booted up. Login using SSH and your username and password.
+Once booted up. Login using [SSH](https://tutorials-raspberrypi.com/raspberry-pi-remote-access-by-using-ssh-and-putty/). The hostname should be **aurora.local* and use your username and password.
 
 Run the following commands:
 ```

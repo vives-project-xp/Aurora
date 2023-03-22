@@ -1,5 +1,5 @@
 # Aurora
-our inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips,  also we will try to develop a person detection system
+Uur inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips,  also we will try to develop a person detection system
 
 ![ifJPbUm9XMsQdt7AQAets-1200-80](https://user-images.githubusercontent.com/83211667/222449053-1e7f0ad8-25d7-4f5e-bab7-4125bcd5382a.jpg)
 
@@ -33,6 +33,7 @@ These are the required software and hardware
  - HTML
  - Python
  - Javascript
+ - Docker
  
  ### Hardware
 
