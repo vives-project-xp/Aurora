@@ -1,13 +1,16 @@
 import requests
 
 class sender:
-    wled = "aurorawled.local"
+    wled = "http://aurorawled.local/"
     connected = False
     def __init__(self):
         print("Sender started")
+        print(self.wled)
     
     def Connect(self, data):
+        print("connecting")
         self.wled = "http://" + data["wled"] + "/"
+        print(self.wled)
         try:
             requests.post(self.wled)
             print(requests)

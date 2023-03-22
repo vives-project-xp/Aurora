@@ -21,7 +21,7 @@ function Post(page, data){
     let date = new Date(Date.now());
     console.debug("post: " + date.getHours() + ":" +date.getMinutes() + ":" + date.getSeconds() + ":" + date.getMilliseconds());
     //fetch("http://" + document.getElementById("api").value + "/" + page, {
-    fetch("http://localhost:5500/" + page, {
+    fetch("http://aurora.local:5500/" + page, {
         method: 'post',
         body: JSON.stringify(data),
         headers: {

@@ -20,17 +20,18 @@ mqtt = Mqtt(app)
 @app.route('/', methods=['GET'])
 def main():
     print("connecting...")
-    return redirect("http://localhost", code=302)
+    return redirect("http://aurora.local", code=302)
 
 @app.route('/color', methods=['POST'])
 def color():
     print("receive", datetime.datetime.today())
     json = request.get_json()
     sender.SetColor(json)
-    return ('', 204)
+    return ("", 204)
 
 @app.route('/connect', methods=['POST'])
 def connect():
+    print("connect received")
     connect = sender.Connect(request.get_json())
     response = make_response()
     response.headers['info'] = connect

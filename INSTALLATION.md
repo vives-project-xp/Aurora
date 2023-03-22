@@ -22,7 +22,7 @@ Save your settings and start the installation.
 Once the installation is finished.
 Insert the sd-card into the Pi and boot it up.
 
-Once booted up. Login using [SSH](https://tutorials-raspberrypi.com/raspberry-pi-remote-access-by-using-ssh-and-putty/). The hostname should be **aurora.local* and use your username and password.
+Once booted up. Login using [SSH](https://tutorials-raspberrypi.com/raspberry-pi-remote-access-by-using-ssh-and-putty/). The hostname should be **aurora.local** and use your username and password.
 
 Run the following commands:
 ```
@@ -44,6 +44,15 @@ git clone https://github.com/vives-project-xp/Aurora.git
 ```
 
 ### Install Docker:
+
+Give the user permission to use docker.
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+sudo reboot
+```
+
+Install Docker
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh sh get-docker.sh
 ```
