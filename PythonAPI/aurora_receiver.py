@@ -1,4 +1,4 @@
-from flask import Flask, json, request, render_template, make_response
+from flask import Flask, json, request, render_template, make_response, redirect
 from flask_mqtt import Mqtt
 from flask_cors import CORS
 import requests
@@ -20,7 +20,7 @@ mqtt = Mqtt(app)
 @app.route('/', methods=['GET'])
 def main():
     print("connecting...")
-    return render_template('index.html')
+    return redirect("http://localhost", code=302)
 
 @app.route('/color', methods=['POST'])
 def color():

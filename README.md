@@ -48,7 +48,28 @@ These are the required software and hardware
 
 ## Installation
 
-No installition yet
+### Docker installation
+
+Install [Raspberry pi os](https://www.raspberrypi.com/software/) on a raspberry pi
+Run the following commands:
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+
+Install git:
+```
+sudo apt install git
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+```
+
+Once you have git installed, you can clone our project to the Raspberry Pi.
+```
+git clone https://github.com/vives-project-xp/Aurora.git
+```
+
+Install Docker:
 
 ## Configuration
 
