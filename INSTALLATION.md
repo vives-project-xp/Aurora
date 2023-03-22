@@ -1,17 +1,21 @@
 Use the [Raspberry Pi Imager](https://www.raspberrypi.com/software/) to install Raspberry pi os on a raspberry pi
 
 Select Raspberry PI OS
+
 ![RaspberryPiOs](./Documenten/Raspberry%20pi/installation1.png)
 
 Choose your destination location.
 Select the gear icon in the right bottom corner.
 Change hostname to **aurora**.local
+
 ![aurora.local](./Documenten/Raspberry%20pi/installation2.png)
 
 Choose your **username** and **password**.
+
 ![username/password](./Documenten/Raspberry%20pi/installation3.png)
 
 Setup your wifi credentials.
+
 ![username/password](./Documenten/Raspberry%20pi/installation4.png)
 
 Save your settings and start the installation.
