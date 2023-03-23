@@ -2,8 +2,7 @@ function Color(){
     let data = {
         red: document.getElementById("red").value,
         green: document.getElementById("green").value,
-        blue: document.getElementById("blue").value,
-        hex: document.getElementById("colorpicker").value
+        blue: document.getElementById("blue").value
     }
     Post("color", data);
 }
