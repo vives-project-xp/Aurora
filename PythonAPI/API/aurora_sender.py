@@ -3,6 +3,7 @@ from paho.mqtt import client as mqtt_client
 import random
 import time
 import json
+from threading import Thread, Timer
 
 broker = 'broker.emqx.io'
 port = 1883
@@ -11,8 +12,10 @@ wled = "wled/aurorawled"
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'Aurora'
 password = 'Aurora_420'
-topic_0 = "aurora/sensor_0/esp32-sonic-f10f7c/commands"
-topic_1 = "aurora/sensor_1/esp32-sonic-e37fa4/commands"
+
+minDistance = 10
+delay = 1
+threads = []
 
 def on_connect(client, userdata, flags, rc):
             if rc == 0:
@@ -55,9 +58,34 @@ class sender:
         # result: [0, 1]
         status = result[0]
         if status == 0:
-            print(f"Send `{msg}` to topic `{topic}`")
+            #print(f"Send `{msg}` to topic `{topic}`")
+            return
         else:
             print(f"Failed to send message to topic {self.topic}")
+
+    def Sensor(self, data):
+         sensor = data["sensor"]
+         distance = data["distance"]
+         if(distance >= minDistance): return
+         else:
+              #print(sensor)
+              self.CreateSegment(sensor + 1)
+    
+    def CreateSegment(self, id):
+         msg = '{"seg":[{"id":' + str(id) + ',"frz":false}]}'
+         self.publish(wled + "/api", msg)
+         threads.append(id)
+         t = Timer(delay, self.Task, args=[id])
+         t.start()
+
+    def Task(self, id):
+        threads.remove(id)
+        if(id in threads): 
+                return
+        else:
+            msg = '{"seg":[{"id":' + str(id) + ',"frz":true}]}'
+            self.publish(wled + "/api", msg)
+            return
                 
     def run(self):
         client.loop_start()
