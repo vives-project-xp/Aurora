@@ -14,6 +14,11 @@ div {
     justify-content: center ;
 }
 
+button {
+    width: 100px;
+    height: 50px;
+}
+
 div>div{
     display: flex;
     flex-direction: column;

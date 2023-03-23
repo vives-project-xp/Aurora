@@ -24,10 +24,21 @@ def main():
 
 @app.route('/color', methods=['POST'])
 def color():
-    print("receive", datetime.datetime.today())
     json = request.get_json()
     sender.SetColor(json)
     return ("", 204)
+
+@app.route('/preset', methods=['POST'])
+def preset():
+    json = request.get_json()
+    sender.SetPreset(json)
+    return ("", 204)
+
+@app.route('/toggle', methods=['POST'])
+def toggle():
+    sender.Toggle()
+    return ("", 204)
+
 
 def create_app():
     app = Flask(__name__)
