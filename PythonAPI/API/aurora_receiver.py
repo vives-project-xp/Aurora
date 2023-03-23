@@ -1,11 +1,10 @@
 from flask import Flask, json, request, render_template, make_response, redirect
 from flask_mqtt import Mqtt
 from flask_cors import CORS
-import requests
 from aurora_sender import sender
-import datetime
 
 sender = sender()
+
 app = Flask(__name__)
 CORS(app)
 app.config['MQTT_BROKER_URL'] = 'broker.emqx.io'  # use the free broker from HIVEMQ
@@ -19,7 +18,6 @@ mqtt = Mqtt(app)
 
 @app.route('/', methods=['GET'])
 def main():
-    print("somene tries to connect")
     return redirect("http://aurora.local", code=302)
 
 @app.route('/color', methods=['POST'])
@@ -46,13 +44,13 @@ def create_app():
     
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
-    print("Connected to Broker")
+    print("API receiver: Connected to Broker")
     mqtt.subscribe('aurora_sensor')
 
 @mqtt.on_subscribe()
 def handle_subscribe(client, userdata, mid, granted_qos):
     print('Subscription id {} granted with qos {}.'
-          .format(mid, granted_qos)) 
+          .format(mid, granted_qos))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5500)

@@ -3,7 +3,6 @@ function Color(){
         red: document.getElementById("red").value,
         green: document.getElementById("green").value,
         blue: document.getElementById("blue").value,
-        alpha: document.getElementById("alpha").value,
     }
     Post("color", data);
 }
@@ -19,7 +18,7 @@ function Preset() {
 
 function Post(page, data){
     //fetch("http://" + document.getElementById("api").value + "/" + page, {
-    fetch("http://aurora.local:5500/" + page, {
+    fetch("http://localhost:5500/" + page, {
         method: 'post',
         body: JSON.stringify(data),
         headers: {

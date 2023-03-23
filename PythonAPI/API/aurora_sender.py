@@ -2,6 +2,7 @@ import requests
 from paho.mqtt import client as mqtt_client
 import random
 import time
+import json
 
 broker = 'broker.emqx.io'
 port = 1883
@@ -10,11 +11,12 @@ wled = "wled/aurorawled"
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'Aurora'
 password = 'Aurora_420'
-
+topic_0 = "aurora/sensor_0/esp32-sonic-f10f7c/commands"
+topic_1 = "aurora/sensor_1/esp32-sonic-e37fa4/commands"
 
 def on_connect(client, userdata, flags, rc):
             if rc == 0:
-                print("Connected to MQTT Broker!")
+                print("Aurora sender: Connected to MQTT Broker!")
             else:
                 print("Failed to connect, return code %d\n", rc)
 
@@ -27,7 +29,7 @@ client.connect(broker, port)
 class sender:
     connected = False
     def __init__(self):
-        print("Sender started")
+        print("API Sender started")
         self.run()
 
     def Toggle(self):
@@ -40,31 +42,14 @@ class sender:
         red = data["red"]
         green = data["green"]
         blue = data["blue"]
-        alpha = data["alpha"]
         msg =  '{"seg":[{"col":[['+ red + ','+green +',' + blue + ']]}]}'
         self.publish(wled + "/api", msg)
-        self.publish(wled + "/api", '{"bri":' + alpha + '}')
 
     def SetPreset(self, data):
         print("setpreset")
         ps = data["ps"]
         msg = '{"ps":' +ps +'}'
         self.publish(wled + "/api", msg)
-
-
-    def connect_mqtt(self):
-        def on_connect(client, userdata, flags, rc):
-            if rc == 0:
-                print("Connected to MQTT Broker!")
-            else:
-                print("Failed to connect, return code %d\n", rc)
-
-        client = mqtt_client.Client(client_id)
-        client.username_pw_set(username, password)
-        client.on_connect = on_connect
-        client.connect(broker, port)
-        return client
-
 
     def publish(self, topic, msg):
         result = client.publish(topic, msg)
@@ -74,8 +59,6 @@ class sender:
             print(f"Send `{msg}` to topic `{topic}`")
         else:
             print(f"Failed to send message to topic {self.topic}")
-
-
+                
     def run(self):
         client.loop_start()
-        
