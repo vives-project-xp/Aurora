@@ -54,7 +54,7 @@ sudo reboot
 
 Install Docker
 ```
-curl -fsSL https://get.docker.com -o get-docker.sh sh get-docker.sh
+curl -sSL https://get.docker.com | sh
 ```
 
 Once docker is installed, you can start our project.
@@ -62,4 +62,5 @@ Once docker is installed, you can start our project.
 docker compose up -d --build
 ```
 
+It can take a while until everything has downloaden
 If everything works as it should, you can search for [aurora.local](http://aurora.local/)
