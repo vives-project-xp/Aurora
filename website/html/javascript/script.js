@@ -18,7 +18,7 @@ function Preset() {
 
 function Post(page, data){
     //fetch("http://" + document.getElementById("api").value + "/" + page, {
-    fetch("http://localhost:5500/" + page, {
+    fetch("http://aurora.local:5500/" + page, {
         method: 'post',
         body: JSON.stringify(data),
         headers: {
