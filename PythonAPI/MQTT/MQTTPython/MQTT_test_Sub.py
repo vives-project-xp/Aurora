@@ -5,7 +5,8 @@ from paho.mqtt import client as mqtt_client
 
 broker = 'broker.emqx.io'
 port = 1883
-topic = "aurora_sensor"
+#topic = "sonic/modules/hello"
+topic = "sonic/modules/measurements"
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 100)}'
 username = 'Aurora'

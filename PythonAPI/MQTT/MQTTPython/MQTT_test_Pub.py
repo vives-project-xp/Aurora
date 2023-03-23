@@ -2,13 +2,14 @@
 
 import random
 import time
+import json
 
 from paho.mqtt import client as mqtt_client
 
 
 broker = 'broker.emqx.io'
 port = 1883
-topic = "aurora_sensor"
+topic = "sonic/modules/esp32-sonic-f10f7c/commands"
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'Aurora'
@@ -32,7 +33,7 @@ def publish(client):
     msg_count = 0
     while True:
         time.sleep(1)
-        msg = f"messages: {msg_count}"
+        msg = json.dumps({"cmd":"measure" })
         result = client.publish(topic, msg)
         # result: [0, 1]
         status = result[0]

@@ -1,0 +1,4 @@
+config.h
+esp32c3.svd
+debug_custom.json
+debug.cfg
