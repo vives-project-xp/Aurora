@@ -5,7 +5,7 @@ import time
 
 broker = 'broker.emqx.io'
 port = 1883
-topic = "wled/aurorawled"
+wled = "wled/aurorawled"
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'Aurora'
@@ -25,20 +25,17 @@ client.connect(broker, port)
 
 
 class sender:
-    
-    wled = "http://aurorawled.local/"
     connected = False
     def __init__(self):
         print("Sender started")
-        print(self.wled)
         self.run()
     
     def SetColor(self, data):
-        red = "&R=" + data["red"]
-        green = "&G=" + data["green"]
-        blue = "&B=" + data["blue"]
-        url =  self.wled + 'win' + red + green + blue
-        self.publish()
+        red = data["red"]
+        green = data["green"]
+        blue = data["blue"]
+        msg =  "#" + red + green + blue
+        self.publish(wled + "/col", msg)
 
 
     def connect_mqtt(self):
@@ -55,16 +52,14 @@ class sender:
         return client
 
 
-    def publish(self):
-        msg = f"T"
+    def publish(self, topic, msg):
         result = client.publish(topic, msg)
-        print(result)
         # result: [0, 1]
         status = result[0]
         if status == 0:
             print(f"Send `{msg}` to topic `{topic}`")
         else:
-            print(f"Failed to send message to topic {topic}")
+            print(f"Failed to send message to topic {self.topic}")
 
 
     def run(self):
