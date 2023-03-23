@@ -22,5 +22,4 @@ button {
 div>div{
     display: flex;
     flex-direction: column;
-    margin: 10px;
 }

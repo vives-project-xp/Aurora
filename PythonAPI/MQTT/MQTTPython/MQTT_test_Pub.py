@@ -8,8 +8,9 @@ from paho.mqtt import client as mqtt_client
 
 
 broker = 'broker.emqx.io'
-port = 1883
-topic = "sonic/modules/esp32-sonic-f10f7c/commands"
+port = 1883  
+topic_0 = "aurora/sensor_0/esp32-sonic-f10f7c/commands"
+topic_1 = "aurora/sensor_1/esp32-sonic-e37fa4/commands"
 # generate client ID with pub prefix randomly
 client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'Aurora'
@@ -32,15 +33,22 @@ def connect_mqtt():
 def publish(client):
     msg_count = 0
     while True:
-        time.sleep(1)
+        time.sleep(0.25)
         msg = json.dumps({"cmd":"measure" })
-        result = client.publish(topic, msg)
-        # result: [0, 1]
-        status = result[0]
-        if status == 0:
-            print(f"Send `{msg}` to topic `{topic}`")
+        result_0 = client.publish(topic_0, msg)
+        status_0 = result_0[0]
+        if status_0 == 0:
+            print(f"Send `{msg}` to topic `{topic_0}`")
         else:
-            print(f"Failed to send message to topic {topic}")
+            print(f"Failed to send message to topic {topic_0}")
+        time.sleep(0.25)
+        result_1 = client.publish(topic_1, msg)
+        # result: [0, 1]
+        status_1 = result_0[0]
+        if status_1 == 0:
+            print(f"Send `{msg}` to topic `{topic_1}`")
+        else:
+            print(f"Failed to send message to topic {topic_1}")
         msg_count += 1
 
 

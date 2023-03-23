@@ -40,8 +40,10 @@ class sender:
         red = data["red"]
         green = data["green"]
         blue = data["blue"]
-        msg =  "#" + red + green + blue
-        self.publish(wled + "/col", msg)
+        alpha = data["alpha"]
+        msg =  '{"seg":[{"col":[['+ red + ','+green +',' + blue + ']]}]}'
+        self.publish(wled + "/api", msg)
+        self.publish(wled + "/api", '{"bri":' + alpha + '}')
 
     def SetPreset(self, data):
         print("setpreset")
