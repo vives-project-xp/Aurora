@@ -45,7 +45,8 @@ These are the required software and hardware
  - Voeding
  - IR sensor
  - 3d printed brackets
-  
+
+ > You can find extra information to buy the right components [here](./HARDWARE.md).
 
 ## Installation
 
