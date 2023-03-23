@@ -29,16 +29,25 @@ class sender:
     def __init__(self):
         print("Sender started")
         self.run()
-    
+
+    def Toggle(self):
+         print("toggle")
+         self.publish(wled, "T")
+
+
     def SetColor(self, data):
+        print("setcolor")
         red = data["red"]
         green = data["green"]
         blue = data["blue"]
         msg =  "#" + red + green + blue
         self.publish(wled + "/col", msg)
 
-        data = '{"on":true,"bri":50,"ps":1}'
-        self.publish(wled + "/api", data)
+    def SetPreset(self, data):
+        print("setpreset")
+        ps = data["ps"]
+        msg = '{"ps":' +ps +'}'
+        self.publish(wled + "/api", msg)
 
 
     def connect_mqtt(self):

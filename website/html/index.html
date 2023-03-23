@@ -11,17 +11,12 @@
 <body>
     <h1>This is our Flask server</h1>
     <div>
-        <div>
-            <p>API url</p>
-            <input onchange="Connect()" id="api" value="auroraapi.local:5500">
-        </div>
-        <div>
-            <p>Wled url</p>
-            <input onchange="Connect()" id="wled" value="aurorawled.local">
-        </div>
-    </div>
     <p>red <br> <input onchange="Color()"  id="red" class="red" oninput="this.nextElementSibling.value = this.value"></p>
     <p>green <br> <input onchange="Color()"  id="green" class="green" oninput="this.nextElementSibling.value = this.value"></p>
     <p>blue <br> <input onchange="Color()" id="blue" class="blue" oninput="this.nextElementSibling.value = this.value"></p>
+    </div>
+    <button onclick="Toggle()">Toggle</button>
+    <p>Preset <br> <input onchange="Preset()"  id="preset" class="preset" oninput="this.nextElementSibling.value = this.value"></p>
+
 </body>
 </html>
