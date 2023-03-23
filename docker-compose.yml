@@ -7,6 +7,6 @@ services:
       - 80:80
   api:
     restart: always
-    build: ./PythonAPI
+    build: ./PythonAPI/receiver/MQTT
     ports:
       - 5500:5500
