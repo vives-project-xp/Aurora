@@ -3,6 +3,7 @@ function Color(){
         red: document.getElementById("red").value,
         green: document.getElementById("green").value,
         blue: document.getElementById("blue").value,
+        alpha: document.getElementById("alpha").value,
     }
     Post("color", data);
 }
