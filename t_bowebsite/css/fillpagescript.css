@@ -1,0 +1,99 @@
+﻿.container {
+    align-items: center;
+    display:flex;
+    justify-content:center;
+}
+
+img {
+    max-width: 300%;
+    border-radius: 25px;
+}
+.image {
+    flex-basis: 40%
+}
+
+.text {
+    padding-left: 30px;
+}
+
+
+
+
+
+
+#title {
+    font-family: 'Agency FB';
+    font-size: 300%;
+    text-transform: uppercase;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#extrainfo {
+    color: mediumpurple;
+    text-decoration: none;
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Arial Rounded MT';
+}
+
+
+p {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
+    font-size: 400%;
+    margin-bottom: 0;
+    margin-bottom: -0.25em;
+    display: block;
+    cursor: pointer;
+    width: 500px;
+    cursor: default;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 100px;
+}
+.gradient-text {
+    background-color: mediumpurple;
+    background-image: linear-gradient( 45deg, mediumpurple 16.666%, #E16541 16.666%, #E16541 33.333%, #F18F43 33.333%, #F18F43 50%, #8B9862 50%, #8B9862 66.666%, #476098 66.666%, #476098 83.333%, #A7489B 83.333%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text-simple-animation-rev 3s ease forwards;
+}
+
+    .gradient-text:hover {
+        animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+    }
+
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+
+    40% {
+        background-size: 650%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+
+    80% {
+        background-size: 650%;
+    }
+
+    100% {
+        background-size: 650%;
+    }
+}
