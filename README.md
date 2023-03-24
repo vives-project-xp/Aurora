@@ -43,8 +43,9 @@ These are the required software and hardware
  - 2,5 carre kabels
  - breadboard
  - Voeding
- - IR sensor
+ - ultrasone sensor
  - 3d printed brackets
+ - 3d printed joints
 
  > You can find extra information to buy the right components [here](./HARDWARE.md).
 
