@@ -1,0 +1,76 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .slider-label {
+    margin-bottom: 10px;
+  }
+  
+  .slider {
+    width: 300px;
+  }
+  
+  .value-label {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .color-box {
+    width: 300px;
+    height: 100px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .input-label {
+    margin-right: 10px;
+  }
+  
+  .hex-input {
+    width: 150px;
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .decimal-input {
+    width: 150px;
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  button {
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+  }
+  
