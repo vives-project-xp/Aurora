@@ -1,22 +1,26 @@
 ﻿.container {
-    align-items: center;
-    display:flex;
-    justify-content:center;
+    position: relative;
+    text-align: center;
 }
 
 img {
-    max-width: 300%;
+    max-width: 500%;
+    max-height: 500%;
     border-radius: 25px;
+    border: 500px solid #1d1f20;
+    border-style: none solid none none;
+    margin-top:50px;
 }
 .image {
     flex-basis: 40%
 }
 
 .text {
-    padding-left: 30px;
+    padding-left: 2%;
+    position: absolute;
+    bottom: 12%;
+    left: 45%;
 }
-
-
 
 
 
@@ -58,7 +62,7 @@ p {
 }
 .gradient-text {
     background-color: mediumpurple;
-    background-image: linear-gradient( 45deg, mediumpurple 16.666%, #E16541 16.666%, #E16541 33.333%, #F18F43 33.333%, #F18F43 50%, #8B9862 50%, #8B9862 66.666%, #476098 66.666%, #476098 83.333%, #A7489B 83.333%);
+    background-image: linear-gradient( 315deg, mediumpurple 16.666%, #00ffff 16.666%, #00ffff 33.333%, #00ffff 33.333%, #0000ff 50%, #ff1aff 50%, #00ffff 66.666%, #0000ff 66.666%, mediumpurple 83.333%, mediumpurple 83.333%);
     background-size: 100%;
     background-repeat: repeat;
     -webkit-background-clip: text;
