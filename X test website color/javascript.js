@@ -22,7 +22,7 @@ function updateColor() {
 }
 
 function componentToHex(c) {
-  var hex = c.toString(16);
+  var hex = Number(c).toString(16);
   return hex.length == 1 ? "0" + hex : hex;
 }
 
@@ -49,7 +49,8 @@ Form()
     
 		const form = document.getElementById("preset-form");
 		form.addEventListener("submit", function(event) {
-			event.preventDefault(); // Prevent the form from submitting and refreshing the page
+			event.preventDefault(); 
+      // Prevent the form from submitting and refreshing the page
 
 			const input = document.getElementById("preset-input");
 			const preset = input.value;
