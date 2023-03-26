@@ -1,4 +1,4 @@
-body
+.index
 {
   background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
   background-color: black;
@@ -189,6 +189,61 @@ body
       align-items: center;
       color:  white;
     }
+  }
+
+
+  /* Personen CSS*/
+
+  .Personen
+  {
+    background: linear-gradient(to top, #cc33ff 0%, #99ff33 100%);
+
+    background-color: black;
+  }
+  .containeremployee {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px;
+  }
+  
+  .employee {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(33.33% - 20px);
+  }
+  
+  .employee img {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+  }
+  
+  .employee h2 {
+    margin: 0;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .employee p {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    color: #888;
+    margin-bottom: 10px;
   }
   
   
