@@ -41,8 +41,50 @@ blueSlider.addEventListener("input", updateColor);
 function init() {
   updateColor();
 }
+redSlider.addEventListener("mousemove", function(){
+  var x = redSlider.value;
+  var color = 'linear-gradient(90deg,red ' + x/255*100 + '%,grey ' + x/255*100 + '%)';
+
+  redSlider.style.background = color;
+})
+
+greenSlider.addEventListener("mousemove", function(){
+  var x = greenSlider.value;
+  var color = 'linear-gradient(90deg,#00ff00 ' + x/255*100 + '%,grey ' + x/255*100 + '%)';
+
+  greenSlider.style.background = color;
+})
+
+blueSlider.addEventListener("mousemove", function(){
+  var x = blueSlider.value;
+  var color = 'linear-gradient(90deg,blue ' + x/255*100 + '%,grey ' + x/255*100 + '%)';
+
+  blueSlider.style.background = color;
+})
 
 init();
+
+
+
+
+
+/*
+
+function Color(){
+    let data = {
+        red: document.getElementById("red").value,
+        green: document.getElementById("green").value,
+        blue: document.getElementById("blue").value
+    }
+    Post("color", data);
+}
+
+function Toggle(){
+    Post("toggle", "");
+}
+
+*/
+
 
 Form()
 {
@@ -61,3 +103,26 @@ Form()
 	
 }
 
+
+/*
+Preset
+
+function Preset() {
+    let data = {ps: document.getElementById("preset").value}
+    Post("preset", data)
+}
+
+function Post(page, data){
+    //fetch("http://" + document.getElementById("api").value + "/" + page, {
+    fetch("http://aurora.local:5500/" + page, {
+        method: 'post',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })    
+}
+
+
+
+*/

@@ -1,6 +1,8 @@
 body
 {
-  background: linear-gradient(to bottom right, mediumpurple, rgba(255, 166, 0, 0.76) );
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+  background-color: black;
+  height: 100vh;
 }
 
 .container {
@@ -8,7 +10,7 @@ body
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
-   
+    
   }
   
   h1 {
@@ -32,7 +34,46 @@ body
   
   .slider {
     width: 255px;
-    color: white;
+  }
+  #red-slider {
+    appearance: none;
+    height: 10px;
+    background: linear-gradient(90deg,red 0%,grey 0%);
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  #green-slider {
+    appearance: none;
+    height: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg,#00ff00 0%,grey 0%);
+    border-radius: 6px;
+  }
+  #blue-slider {
+    appearance: none;
+    height: 10px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg,blue 0%,grey 0%);
+    border-radius: 6px;
+  }
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width:20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+  }
+
+  .slider::-moz-ranger-thumb{
+    width:20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
   }
   
   
@@ -44,10 +85,10 @@ body
   
   .color-box {
     width: 300px;
-    height: 100px;
+    height: 75px;
     margin-bottom: 30px;
     border-radius: 5px;
-    border: 1px solid black;
+    border: 1.5px solid black;
   }
   
   .input-container {
@@ -59,6 +100,7 @@ body
   .input-label {
     margin-right: 10px;
     color: white;
+    
   }
   
   .hex-input {
@@ -66,12 +108,14 @@ body
     font-size: 16px;
     padding: 5px;
     margin-right: 10px;
+    border : 1.5px solid black
   }
   
   .decimal-input {
     width: 150px;
     font-size: 16px;
     padding: 5px;
+    border : 1.5px solid black
   }
   
   button {
