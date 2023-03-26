@@ -17,6 +17,7 @@ body
     /* fontsize header 1*/
     font-size: 28px;
     margin-bottom: 30px;
+    align-items: center;
     color:  white;
   }
   
@@ -24,7 +25,6 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
   }
   
   .slider-label {
@@ -87,6 +87,7 @@ body
     width: 300px;
     height: 75px;
     margin-bottom: 30px;
+    margin-top: 10px;
     border-radius: 5px;
     border: 1.5px solid black;
   }
@@ -98,12 +99,20 @@ body
   }
   
   .input-label {
+    margin-top: 5px;
     margin-right: 10px;
     color: white;
     
   }
   
   .hex-input {
+    width: 150px;
+    font-size: 16px;
+    padding: 5px;
+    margin-right: 10px;
+    border : 1.5px solid black
+  }
+  .reset-input {
     width: 150px;
     font-size: 16px;
     padding: 5px;
@@ -120,7 +129,8 @@ body
   
   button {
     font-size: 16px;
-    padding: 5px 10px;
+    padding: 4px 20px;
+    margin-left: 5px;
     background-color: mediumpurple;
     color: #fff;
     border: none;
@@ -136,6 +146,51 @@ body
     color: #fff;
     font-size: 18px;
   }
+  @media (max-width: 500px) {
+    .slider-label, .slider, .value-label {
+      margin-right: 0;
+    }
+    .slider
+    {
+      width: 255px;
+    }
+    .color-box
+    {
+      width: 150px;
+    }
+    
+    
+    .input-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .hex-input, .decimal-input  {
+      width: 100%;
+      margin-top: 5px;
+      margin-right: 0;
+      margin-bottom: 10px;
+      
+    }
+    button {
+      font-size: 16px;
+      padding: 5px 45px;
+      margin-top: 5px;
+      background-color: mediumpurple;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    h1 {
+      /* fontsize header 1*/
+      font-size: 28px;
+      margin-bottom: 30px;
+      align-items: center;
+      color:  white;
+    }
+  }
+  
   
   
   
