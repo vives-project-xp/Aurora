@@ -245,7 +245,7 @@
     color: #888;
     margin-bottom: 10px;
   }
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 550px) {
     .containeremployee {
       flex-direction: column;
     }
