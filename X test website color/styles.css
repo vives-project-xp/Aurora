@@ -245,6 +245,16 @@
     color: #888;
     margin-bottom: 10px;
   }
+  @media screen and (max-width: 500px) {
+    .containeremployee {
+      flex-direction: column;
+    }
+    
+    .employee {
+      width: 100%;
+      width: calc(90% - 20px);
+    }
+  }
   
   
   
