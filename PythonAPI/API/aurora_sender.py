@@ -13,7 +13,7 @@ client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'Aurora'
 password = 'Aurora_420'
 
-minDistance = 10
+minDistance = 50
 delay = 1
 threads = []
 
@@ -58,7 +58,7 @@ class sender:
         # result: [0, 1]
         status = result[0]
         if status == 0:
-            #print(f"Send `{msg}` to topic `{topic}`")
+            print(f"Send `{msg}` to topic `{topic}`")
             return
         else:
             print(f"Failed to send message to topic {self.topic}")
@@ -66,7 +66,8 @@ class sender:
     def Sensor(self, data):
          sensor = data["sensor"]
          distance = data["distance"]
-         if(distance >= minDistance): return
+         print(sensor, distance)
+         if(distance >= minDistance or distance < 0): return
          else:
               #print(sensor)
               self.CreateSegment(sensor + 1)
