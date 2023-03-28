@@ -613,3 +613,50 @@
 1680037165: Client auto-69ECA8C0-F6D7-3281-2B16-2B36E90619B9 disconnected, not authorised.
 1680037214: mosquitto version 2.0.15 terminating
 1680037214: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1680041826: mosquitto version 2.0.15 starting
+1680041826: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041826: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041826: Error opening password file "/mosquitto/conf/password.passwd".
+1680041827: mosquitto version 2.0.15 starting
+1680041827: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041827: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041827: Error opening password file "/mosquitto/conf/password.passwd".
+1680041828: mosquitto version 2.0.15 starting
+1680041828: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041828: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041828: Error opening password file "/mosquitto/conf/password.passwd".
+1680041829: mosquitto version 2.0.15 starting
+1680041829: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041829: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041829: Error opening password file "/mosquitto/conf/password.passwd".
+1680041830: mosquitto version 2.0.15 starting
+1680041830: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041830: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041830: Error opening password file "/mosquitto/conf/password.passwd".
+1680041832: mosquitto version 2.0.15 starting
+1680041832: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041832: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041832: Error opening password file "/mosquitto/conf/password.passwd".
+1680041836: mosquitto version 2.0.15 starting
+1680041836: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041836: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041836: Error opening password file "/mosquitto/conf/password.passwd".
+1680041843: mosquitto version 2.0.15 starting
+1680041843: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041843: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041843: Error opening password file "/mosquitto/conf/password.passwd".
+1680041856: mosquitto version 2.0.15 starting
+1680041856: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041856: Error: Unable to open pwfile "/mosquitto/conf/password.passwd".
+1680041856: Error opening password file "/mosquitto/conf/password.passwd".
+1680041882: mosquitto version 2.0.15 starting
+1680041882: Config loaded from /mosquitto/config/mosquitto.conf.
+1680041882: Opening ipv4 listen socket on port 1883.
+1680041882: Opening ipv6 listen socket on port 1883.
+1680041882: mosquitto version 2.0.15 running
+1680041883: New connection from 172.22.0.3:52353 on port 1883.
+1680041883: New client connected from 172.22.0.3:52353 as auto-7F1554BA-002F-A0B5-5AB1-B358C1C74876 (p2, c1, k5, u'Aurora').
+1680041885: New connection from 172.22.0.1:34880 on port 1883.
+1680041885: New client connected from 172.22.0.1:34880 as esp32-sonic-f10f7c (p2, c1, k15).
+1680041948: mosquitto version 2.0.15 terminating
+1680041948: Saving in-memory database to /mosquitto/data//mosquitto.db.
