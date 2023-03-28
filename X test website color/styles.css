@@ -218,6 +218,7 @@
     padding: 20px;
     margin-bottom: 20px;
     width: calc(33.33% - 20px);
+    max-width: 500px;
   }
   
   .employee img {
@@ -245,14 +246,15 @@
     color: #888;
     margin-bottom: 10px;
   }
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 650px) {
     .containeremployee {
       flex-direction: column;
     }
     
     .employee {
-      width: 100%;
-      width: calc(90% - 20px);
+      width: calc(75% - 20px);
+      max-width: 500px;
+      
     }
   }
   
