@@ -7,7 +7,7 @@ sender = sender()
 
 app = Flask(__name__)
 CORS(app)
-app.config['MQTT_BROKER_URL'] = 'broker.emqx.io'  # use the free broker from HIVEMQ
+app.config['MQTT_BROKER_URL'] = 'mosquitto' #broker url
 app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
 app.config['MQTT_USERNAME'] = 'Aurora'  # set the username here if you need authentication for the broker
 app.config['MQTT_PASSWORD'] = 'Aurora_420'  # set the password here if the broker demands authentication

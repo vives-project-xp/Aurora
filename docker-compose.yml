@@ -2,11 +2,26 @@ version: '3'
 services:
   website:
     restart: always
+    container_name: Website
     build: ./website
     ports:
       - 80:80
   api:
     restart: always
+    container_name: API
     build: ./PythonAPI/API
     ports:
       - 5500:5500
+  mosquitto:
+    image: eclipse-mosquitto:2
+    container_name: mosquitto
+    restart: always
+    volumes:
+      - ./mosquitto/conf/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto/conf/password.passwd:/mosquitto/conf/password.passwd
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - 9001:9001
+      - 1883:1883
+      - 8883:8883

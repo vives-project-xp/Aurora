@@ -13,7 +13,7 @@ client_id = f'python-mqtt-{random.randint(0, 1000)}'
 username = 'Aurora'
 password = 'Aurora_420'
 
-minDistance = 50
+minDistance = 10
 delay = 1
 threads = []
 
@@ -66,7 +66,7 @@ class sender:
     def Sensor(self, data):
          sensor = data["sensor"]
          distance = data["distance"]
-         print(sensor, distance)
+         #print(sensor, distance)
          if(distance >= minDistance or distance < 0): return
          else:
               #print(sensor)
