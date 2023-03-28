@@ -68,8 +68,6 @@ init();
 
 
 
-/*
-
 function Color(){
     let data = {
         red: document.getElementById("red").value,
@@ -83,7 +81,6 @@ function Toggle(){
     Post("toggle", "");
 }
 
-*/
 
 
 Form()
@@ -104,11 +101,11 @@ Form()
 }
 
 
-/*
+
 Preset
 
 function Preset() {
-    let data = {ps: document.getElementById("preset").value}
+    let data = {ps: document.getElementById("preset-input").value}
     Post("preset", data)
 }
 
@@ -125,4 +122,4 @@ function Post(page, data){
 
 
 
-*/
+
