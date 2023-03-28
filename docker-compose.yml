@@ -17,8 +17,8 @@ services:
     container_name: mosquitto
     restart: always
     volumes:
-      - ./mosquitto/conf/mosquitto.conf:/mosquitto/config/mosquitto.conf
-      - ./mosquitto/conf/password.passwd:/mosquitto/conf/password.passwd
+      - ./mosquitto/conf/mosquitto.conf:/etc/mosquitto/config/mosquitto.conf
+      - ./mosquitto/conf/password.passwd:/etc/mosquitto/conf/password.passwd
       - ./mosquitto/data:/mosquitto/data
       - ./mosquitto/log:/mosquitto/log
     ports:
