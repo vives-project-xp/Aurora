@@ -70,9 +70,9 @@ init();
 
 function Color(){
     let data = {
-        red: document.getElementById("red").value,
-        green: document.getElementById("green").value,
-        blue: document.getElementById("blue").value
+        red: document.getElementById("red-value").value,
+        green: document.getElementById("green-value").value,
+        blue: document.getElementById("blue-value").value
     }
     Post("color", data);
 }
@@ -100,23 +100,20 @@ function Toggle(){
 	
 }*/
 
-
-Preset
-
 function Preset() {
-    let data = {ps: document.getElementById("preset-input").value}
-    Post("preset", data)
+  let data = {ps: document.getElementById("preset").value}
+  Post("preset", data)
 }
 
 function Post(page, data){
-    //fetch("http://" + document.getElementById("api").value + "/" + page, {
-    fetch("http://aurora.local:5500/" + page, {
-        method: 'post',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })    
+  //fetch("http://" + document.getElementById("api").value + "/" + page, {
+  fetch("http://aurora.local:5500/" + page, {
+      method: 'post',
+      body: JSON.stringify(data),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  })    
 }
 
 

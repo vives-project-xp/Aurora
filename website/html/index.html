@@ -11,17 +11,17 @@
       <h1>RGB Slider Application</h1>
       <div class="slider-container">
         <label class="slider-label" for="red-slider">Red</label>
-        <input class="slider" id="red-slider" type="range" min="0" max="255"value="0">
+        <input onchange="Color()" class="slider" id="red-slider" type="range" min="0" max="255"value="0">
         <span class="value-label" id="red-value">0</span>
       </div>
       <div class="slider-container">
         <label class="slider-label" for="green-slider">Green</label>
-        <input class="slider" id="green-slider" type="range" min="0" max="255"value="0">
+        <input onchange="Color()" class="slider" id="green-slider" type="range" min="0" max="255"value="0">
         <span class="value-label" id="green-value">0</span>
       </div>
       <div class="slider-container">
         <label class="slider-label" for="blue-slider">Blue</label>
-        <input class="slider" id="blue-slider" type="range" min="0" max="255"value="0">
+        <input onchange="Color()" class="slider" id="blue-slider" type="range" min="0" max="255"value="0">
         <span class="value-label" id="blue-value">0</span>
       </div>
       <div class="color-box" id="color-box"></div>
@@ -31,12 +31,14 @@
         <label class="input-label" for="decimal-input">Decimal:</label>
         <input class="decimal-input" id="decimal-input" type="text" readonly>
       </div>
+      <div class ="button-container">
+        <button onclick="Toggle()">Toggle</button>
+      </div>
       <!-- Here is the preset -->
       <h1>Give a Preset</h1>
 	    <div class="input-container">
 		      <label class = "input-label" for="Preset-input">Enter your Preset:</label>
-		      <input class="Preset-input" type="text" id="Preset-input" name="Preset-input">
-		      <button type="submit">Give Preset</button>
+		      <input onchange="Preset()"  id="preset" class="preset" oninput="this.nextElementSibling.value = this.value"></p>
         </div>
       <script src="./javascript.js"></script>
     </div>
