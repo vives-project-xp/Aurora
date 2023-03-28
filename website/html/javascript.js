@@ -83,7 +83,7 @@ function Toggle(){
 
 
 
-Form()
+/*Form()
 {
     
 		const form = document.getElementById("preset-form");
@@ -98,8 +98,7 @@ Form()
 			// You can now use the value of `preset` to do whatever you need to do, such as sending it to a server or updating the UI
 		});
 	
-}
-
+}*/
 
 
 Preset
