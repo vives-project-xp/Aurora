@@ -7,7 +7,7 @@ sender = sender()
 
 app = Flask(__name__)
 CORS(app)
-app.config['MQTT_BROKER_URL'] = 'aurora.local' #broker url
+app.config['MQTT_BROKER_URL'] = 'Mosquitto' #broker url
 app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
 app.config['MQTT_USERNAME'] = 'Aurora'  # set the username here if you need authentication for the broker
 app.config['MQTT_PASSWORD'] = 'Aurora_420'  # set the password here if the broker demands authentication
@@ -55,7 +55,7 @@ def handle_subscribe(client, userdata, mid, granted_qos):
     
 @mqtt.on_message()
 def handle_message(client, userdata, msg):
-    #print(str(msg.payload.decode()))
+    print(str(msg.payload.decode()))
     sender.Sensor(json.loads(str(msg.payload.decode())))
 
 if __name__ == '__main__':

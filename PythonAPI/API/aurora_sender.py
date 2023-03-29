@@ -5,7 +5,7 @@ import time
 import json
 from threading import Thread, Timer
 
-broker = 'aurora.local'
+broker = 'Mosquitto'
 port = 1883
 wled = "wled/aurorawled"
 # generate client ID with pub prefix randomly
