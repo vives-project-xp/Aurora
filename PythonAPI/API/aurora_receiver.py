@@ -18,6 +18,7 @@ app.config['MQTT_CLIENT_ID'] = "Aurora_receiver"
 topic = "aurora_sensor"
 
 mqtt = Mqtt(app)
+mqtt.init_app(app)
 
 @app.route('/', methods=['GET'])
 def main():
