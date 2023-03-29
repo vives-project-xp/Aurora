@@ -18,10 +18,10 @@ app.config['MQTT_CLIENT_ID'] = "Aurora_receiver"
 topic = "aurora_sensor"
 
 mqtt = Mqtt(app)
-mqtt.init_app(app)
 
 @app.route('/', methods=['GET'])
 def main():
+    mqtt.init_app(app)
     return redirect("http://aurora.local", code=302)
 
 @app.route('/color', methods=['POST'])
