@@ -3,6 +3,7 @@ from flask_mqtt import Mqtt
 from flask_cors import CORS
 from aurora_sender import sender
 
+
 sender = sender()
 
 app = Flask(__name__)
@@ -13,7 +14,7 @@ app.config['MQTT_USERNAME'] = 'Aurora'  # set the username here if you need auth
 app.config['MQTT_PASSWORD'] = 'Aurora_420'  # set the password here if the broker demands authentication
 app.config['MQTT_KEEPALIVE'] = 5  # set the time interval for sending a ping to the broker to 5 seconds
 app.config['MQTT_TLS_ENABLED'] = False  # set TLS to disabled for testing purposes
-client = "Aurora_reciever"
+app.config['MQTT_CLIENT_ID'] = "Aurora_receiver"
 topic = "aurora_sensor"
 
 mqtt = Mqtt(app)
@@ -58,6 +59,10 @@ def handle_subscribe(client, userdata, mid, granted_qos):
 def handle_message(client, userdata, msg):
     print(str(msg.payload.decode()))
     sender.Sensor(json.loads(str(msg.payload.decode())))
+
+@mqtt.on_disconnect()
+def handle_disconnect():
+    print("Aurora_Receiver DISCONNECTED")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5500)
