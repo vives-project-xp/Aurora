@@ -70,9 +70,9 @@ init();
 
 function Color(){
     let data = {
-        red: document.getElementById("red-value").value,
-        green: document.getElementById("green-value").value,
-        blue: document.getElementById("blue-value").value
+        redSlider: document.getElementById("red-value").value,
+        greenSlider: document.getElementById("green-value").value,
+        blueSlider: document.getElementById("blue-value").value
     }
     Post("color", data);
 }
