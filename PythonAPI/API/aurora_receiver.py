@@ -2,6 +2,7 @@ from flask import Flask, json, request, render_template, make_response, redirect
 from flask_mqtt import Mqtt
 from flask_cors import CORS
 from aurora_sender import sender
+from threading import Timer
 
 
 sender = sender()
@@ -18,7 +19,6 @@ app.config['MQTT_CLIENT_ID'] = "Aurora_receiver"
 topic = "aurora_sensor"
 
 mqtt = Mqtt(app)
-mqtt.init_app(app)
 
 @app.route('/', methods=['GET'])
 def main():
@@ -44,11 +44,24 @@ def toggle():
 
 def create_app():
     app = Flask(__name__)
-    mqtt.init_app(app)
+    connect()
+
+def connect():
+     try:
+        mqtt.init_app(app)
+     except:
+         return
     
+connected = False
+
+def UpdateConnect(connected_old):
+    global connected
+    connected = not connected_old
+
 @mqtt.on_connect()
 def handle_connect(client, userdata, flags, rc):
     print("API receiver: Connected to Broker")
+    UpdateConnect(connected)
     mqtt.subscribe(topic)
 
 @mqtt.on_subscribe()
@@ -64,6 +77,18 @@ def handle_message(client, userdata, msg):
 @mqtt.on_disconnect()
 def handle_disconnect():
     print("Aurora_Receiver DISCONNECTED")
+    UpdateConnect(connected)
+    connect()
+
+def reconnect():
+        Timer(10, reconnect).start()
+        if not connected:
+            print("Aurora_receiver: reconnecting...")
+           
+            return
+
+
+reconnect()
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5500)
