@@ -69,7 +69,6 @@ init();
 
 
 function Color(){
-  console.log('red ' + redSlider);
     let data = {
         red: redSlider.value,
         green: greenSlider.value,
@@ -110,7 +109,6 @@ function Preset() {
 
 function Post(page, data){
   //fetch("http://" + document.getElementById("api").value + "/" + page, {
-  console.log(page + " : " + JSON.stringify(data));
   fetch("http://aurora.local:5500/" + page, {
       method: 'post',
       body: JSON.stringify(data),
