@@ -84,7 +84,7 @@ def reconnect():
         Timer(10, reconnect).start()
         if not connected:
             print("Aurora_receiver: reconnecting...")
-           
+            connect()
             return
 
 
