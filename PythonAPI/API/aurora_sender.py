@@ -41,6 +41,7 @@ class sender:
 
 
     def SetColor(self, data):
+        print(json.dumps(data))
         red = data["red"]
         green = data["green"]
         blue = data["blue"]
