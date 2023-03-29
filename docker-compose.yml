@@ -16,10 +16,10 @@ services:
     image: eclipse-mosquitto:2
     container_name: Mosquitto
     restart: always
-    volumes:
-      - ./mosquitto/conf/:/mosquitto/conf/
-      - ./mosquitto/data:/mosquitto/data
-      - ./mosquitto/log:/mosquitto/log
+    volumes: 
+            - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+            - ./mosquitto/data:/mosquitto/data
+            - ./mosquitto/log:/mosquitto/log
     ports:
       - 9001:9001
       - 1883:1883
