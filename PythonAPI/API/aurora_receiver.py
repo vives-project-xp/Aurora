@@ -22,7 +22,6 @@ mqtt.init_app(app)
 
 @app.route('/', methods=['GET'])
 def main():
-    mqtt.init_app(app)
     return redirect("http://aurora.local", code=302)
 
 @app.route('/color', methods=['POST'])
