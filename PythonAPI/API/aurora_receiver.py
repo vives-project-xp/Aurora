@@ -59,7 +59,7 @@ def handle_subscribe(client, userdata, mid, granted_qos):
     
 @mqtt.on_message()
 def handle_message(client, userdata, msg):
-    print(str(msg.payload.decode()))
+    #print(str(msg.payload.decode()))
     sender.Sensor(json.loads(str(msg.payload.decode())))
 
 @mqtt.on_disconnect()
