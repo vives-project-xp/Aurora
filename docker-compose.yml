@@ -17,9 +17,9 @@ services:
     container_name: Mosquitto
     restart: always
     volumes: 
-            - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
-            - ./mosquitto/data:/mosquitto/data
-            - ./mosquitto/log:/mosquitto/log
+            - ./Mosquitto/config/:/mosquitto/config
+            - ./Mosquitto/data:/mosquitto/data
+            - ./Mosquitto/log:/mosquitto/log
     ports:
       - 9001:9001
       - 1883:1883
