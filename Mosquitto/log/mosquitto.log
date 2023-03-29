@@ -660,3 +660,28 @@
 1680041885: New client connected from 172.22.0.1:34880 as esp32-sonic-f10f7c (p2, c1, k15).
 1680041948: mosquitto version 2.0.15 terminating
 1680041948: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1680043637: mosquitto version 2.0.15 starting
+1680043637: Config loaded from /mosquitto/config/mosquitto.conf.
+1680043637: Opening ipv4 listen socket on port 1883.
+1680043637: Opening ipv6 listen socket on port 1883.
+1680043637: mosquitto version 2.0.15 running
+1680043637: New connection from 172.22.0.1:48434 on port 1883.
+1680043637: New client connected from 172.22.0.1:48434 as esp32-sonic-f10f7c (p2, c1, k15).
+1680043703: mosquitto version 2.0.15 terminating
+1680043703: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1680043707: mosquitto version 2.0.15 starting
+1680043707: Config loaded from /mosquitto/config/mosquitto.conf.
+1680043707: Opening ipv4 listen socket on port 1883.
+1680043707: Opening ipv6 listen socket on port 1883.
+1680043707: mosquitto version 2.0.15 running
+1680043709: New connection from 172.22.0.1:35062 on port 1883.
+1680043709: New client connected from 172.22.0.1:35062 as esp32-sonic-f10f7c (p2, c1, k15).
+1680043713: mosquitto version 2.0.15 terminating
+1680043713: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1680043725: mosquitto version 2.0.15 starting
+1680043725: Config loaded from /mosquitto/config/mosquitto.conf.
+1680043725: Opening ipv4 listen socket on port 1883.
+1680043725: Opening ipv6 listen socket on port 1883.
+1680043725: mosquitto version 2.0.15 running
+1680043727: mosquitto version 2.0.15 terminating
+1680043727: Saving in-memory database to /mosquitto/data//mosquitto.db.
