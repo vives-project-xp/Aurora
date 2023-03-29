@@ -5,11 +5,11 @@ import time
 import json
 from threading import Thread, Timer
 
-broker = 'aurora.local'
+broker = 'Mosquitto'
 port = 1883
 wled = "wled/aurorawled"
 # generate client ID with pub prefix randomly
-client_id = f'python-mqtt-{random.randint(0, 1000)}'
+client_id = f'Aurora_Sender'
 username = 'Aurora'
 password = 'Aurora_420'
 
