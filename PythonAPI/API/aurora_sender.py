@@ -13,7 +13,7 @@ client_id = f'Aurora_Sender'
 username = 'Aurora'
 password = 'Aurora_420'
 
-minDistance = 10
+minDistance = 100
 delay = 1
 threads = []
 
