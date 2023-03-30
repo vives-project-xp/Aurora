@@ -26,7 +26,7 @@ button {
     border: none;
     cursor: pointer;
     font-size: 125%;
-    top: -1.5%;
+    top: -2%;
 }
 a {
     position: relative;
@@ -40,18 +40,21 @@ a {
     transition-delay: 0.1s;
     line-height: 0px;
     top: -2%;
+    margin: 20px;
 }
     a:hover {
-        -webkit-text-stroke: 0.2px black;
         font-size: 120%;
-        transition-delay: 0.1s;
+        background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
+        background-size: cover;
+        -webkit-box-shadow: 0 0 20px 20px rgba(29,31,32,50) inset;
+
     }
-.magic {
+ .magic {
     z-index: 5;
     position: absolute;
     width: 15rem;
     height: 15rem;
-    background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
+    background-color: #1d1f20;
     background-size: cover;
     background-position: center;
     border-radius: 10%;
@@ -59,4 +62,18 @@ a {
     top: calc(50%-10rem);
     left: calc(50%-10rem);
 }
+    .magic:hover {
+        z-index: 5;
+        position: absolute;
+        width: 15rem;
+        height: 15rem;
+        background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10%;
+        -webkit-box-shadow: 0 0 20px 20px rgba(29,31,32,50) inset;
+        top: calc(50%-10rem);
+        left: calc(50%-10rem);
+    }
+
 
