@@ -12,36 +12,38 @@ html, body {
     background: #1d1f20;
     padding: 1rem;
     text-align: center;
-    padding-top:7px;
+    padding-top:1%;
     
 }
 button {
     position: relative;
-    font-size: 1rem;
+    font-size: 4%;
     text-transform: uppercase;
     color: mediumpurple;
     background-color: transparent;
     z-index: 10;
     text-decoration: none;
     border: none;
-    padding:0;
-    cursor:pointer;
-    font-size:25px;
+    cursor: pointer;
+    font-size: 125%;
+    top: -1.5%;
 }
 a {
     position: relative;
-    font-size: 1rem;
+    font-size: 110%;
     text-transform: uppercase;
     z-index: 10;
     text-decoration: none;
     color: mediumpurple;
     font-family: 'Arial Rounded MT';
-    -webkit-transition:0.5s;
-    transition-delay:0.1s;
+    -webkit-transition: 0.5s;
+    transition-delay: 0.1s;
+    line-height: 0px;
+    top: -2%;
 }
     a:hover {
         -webkit-text-stroke: 0.2px black;
-        font-size: 19px;
+        font-size: 120%;
         transition-delay: 0.1s;
     }
 .magic {
@@ -49,7 +51,9 @@ a {
     position: absolute;
     width: 15rem;
     height: 15rem;
-    background: url('https://image.winudf.com/v2/image/Y29tLnBvcnRpZXJpYWhtYWQuQXVyb3JhLkF1cm9yYUJvcmVhbGlzLkFtYXppbmdBdXJvcmFXYWxscGFwZXJfc2NyZWVuXzBfMTUyMjY1NzQ2MF8wNzk/screen-0.jpg?fakeurl=1&type=.webp') 50% 50% no-repeat fixed;
+    background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
+    background-size: cover;
+    background-position: center;
     border-radius: 10%;
     -webkit-box-shadow: 0 0 20px 20px rgba(29,31,32,50) inset;
     top: calc(50%-10rem);
