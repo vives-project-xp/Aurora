@@ -5,15 +5,15 @@ import time
 import json
 from threading import Thread, Timer
 
-broker = 'broker.emqx.io'
+broker = 'Mosquitto'
 port = 1883
 wled = "wled/aurorawled"
 # generate client ID with pub prefix randomly
-client_id = f'python-mqtt-{random.randint(0, 1000)}'
+client_id = f'Aurora_Sender'
 username = 'Aurora'
 password = 'Aurora_420'
 
-minDistance = 10
+minDistance = 20
 delay = 1
 threads = []
 
@@ -41,7 +41,7 @@ class sender:
 
 
     def SetColor(self, data):
-        print(json.dumps(data))
+        #print(json.dumps(data))
         red = data["red"]
         green = data["green"]
         blue = data["blue"]
@@ -59,7 +59,7 @@ class sender:
         # result: [0, 1]
         status = result[0]
         if status == 0:
-            print(f"Send `{msg}` to topic `{topic}`")
+            #print(f"Send `{msg}` to topic `{topic}`")
             return
         else:
             print(f"Failed to send message to topic {self.topic}")

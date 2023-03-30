@@ -692,3 +692,145 @@
 1680074447: mosquitto version 2.0.15 running
 1680074508: mosquitto version 2.0.15 terminating
 1680074508: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1680074946: mosquitto version 2.0.15 starting
+1680074946: Config loaded from /mosquitto/config/mosquitto.conf.
+1680074946: Opening ipv4 listen socket on port 1883.
+1680074946: Opening ipv6 listen socket on port 1883.
+1680074946: mosquitto version 2.0.15 running
+1680074967: mosquitto version 2.0.15 terminating
+1680074967: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1680104966: mosquitto version 2.0.15 starting
+1680104966: Config loaded from /mosquitto/config/mosquitto.conf.
+1680104966: Opening ipv4 listen socket on port 1883.
+1680104966: Opening ipv6 listen socket on port 1883.
+1680104966: mosquitto version 2.0.15 running
+1680104969: mosquitto version 2.0.15 terminating
+1680104969: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1680109097: mosquitto version 2.0.15 starting
+1680109097: Config loaded from /mosquitto/config/mosquitto.conf.
+1680109097: Opening ipv4 listen socket on port 1883.
+1680109097: Opening ipv6 listen socket on port 1883.
+1680109097: mosquitto version 2.0.15 running
+1680109097: New connection from 172.18.0.3:37491 on port 1883.
+1680109097: New client connected from 172.18.0.3:37491 as auto-14E500FF-B894-BE86-BF25-EC640ECF7DF8 (p2, c1, k5, u'Aurora').
+1680109097: New connection from 172.18.0.3:46353 on port 1883.
+1680109097: New client connected from 172.18.0.3:46353 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680109114: mosquitto version 2.0.15 terminating
+1680109118: mosquitto version 2.0.15 starting
+1680109118: Config loaded from /mosquitto/config/mosquitto.conf.
+1680109118: Opening ipv4 listen socket on port 1883.
+1680109118: Opening ipv6 listen socket on port 1883.
+1680109118: mosquitto version 2.0.15 running
+1680109118: New connection from 172.18.0.3:41991 on port 1883.
+1680109118: New client connected from 172.18.0.3:41991 as auto-4F98F790-D432-41E1-363E-B044D5485794 (p2, c1, k5, u'Aurora').
+1680109118: New connection from 172.18.0.3:53725 on port 1883.
+1680109118: New client connected from 172.18.0.3:53725 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680109125: mosquitto version 2.0.15 terminating
+1680109133: mosquitto version 2.0.15 starting
+1680109133: Config loaded from /mosquitto/config/mosquitto.conf.
+1680109133: Opening ipv4 listen socket on port 1883.
+1680109133: Opening ipv6 listen socket on port 1883.
+1680109133: mosquitto version 2.0.15 running
+1680109133: New connection from 172.18.0.3:50153 on port 1883.
+1680109133: New client connected from 172.18.0.3:50153 as auto-0FF924C9-EBFE-488C-D3C4-86549F10DEFD (p2, c1, k5, u'Aurora').
+1680109133: New connection from 172.18.0.3:40053 on port 1883.
+1680109133: New client connected from 172.18.0.3:40053 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680113050: mosquitto version 2.0.15 terminating
+1680113055: mosquitto version 2.0.15 starting
+1680113055: Config loaded from /mosquitto/config/mosquitto.conf.
+1680113055: Opening ipv4 listen socket on port 1883.
+1680113055: Opening ipv6 listen socket on port 1883.
+1680113055: mosquitto version 2.0.15 running
+1680113055: New connection from 172.18.0.2:44343 on port 1883.
+1680113055: New client connected from 172.18.0.2:44343 as auto-A57A5709-DFAF-6254-56E4-6BCEE927F324 (p2, c1, k5, u'Aurora').
+1680113055: New connection from 172.18.0.2:40345 on port 1883.
+1680113055: New client connected from 172.18.0.2:40345 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680113853: mosquitto version 2.0.15 terminating
+1680113859: mosquitto version 2.0.15 starting
+1680113859: Config loaded from /mosquitto/config/mosquitto.conf.
+1680113859: Opening ipv4 listen socket on port 1883.
+1680113859: Opening ipv6 listen socket on port 1883.
+1680113859: mosquitto version 2.0.15 running
+1680113860: New connection from 172.18.0.2:59187 on port 1883.
+1680113860: New client connected from 172.18.0.2:59187 as auto-1F21502C-F4BB-FDC6-B227-5D8CA4D23BE3 (p2, c1, k5, u'Aurora').
+1680113860: New connection from 172.18.0.2:38731 on port 1883.
+1680113860: New client connected from 172.18.0.2:38731 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680114512: mosquitto version 2.0.15 terminating
+1680114516: mosquitto version 2.0.15 starting
+1680114516: Config loaded from /mosquitto/config/mosquitto.conf.
+1680114516: Opening ipv4 listen socket on port 1883.
+1680114516: Opening ipv6 listen socket on port 1883.
+1680114516: mosquitto version 2.0.15 running
+1680114516: New connection from 172.18.0.2:44503 on port 1883.
+1680114516: New client connected from 172.18.0.2:44503 as auto-72D03409-0865-709B-4050-8BB9F6D16875 (p2, c1, k5, u'Aurora').
+1680114516: New connection from 172.18.0.2:48305 on port 1883.
+1680114516: New client connected from 172.18.0.2:48305 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680114545: mosquitto version 2.0.15 terminating
+1680114551: mosquitto version 2.0.15 starting
+1680114551: Config loaded from /mosquitto/config/mosquitto.conf.
+1680114551: Opening ipv4 listen socket on port 1883.
+1680114551: Opening ipv6 listen socket on port 1883.
+1680114551: mosquitto version 2.0.15 running
+1680114552: New connection from 172.18.0.3:59961 on port 1883.
+1680114552: New client connected from 172.18.0.3:59961 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680114578: mosquitto version 2.0.15 terminating
+1680114582: mosquitto version 2.0.15 starting
+1680114582: Config loaded from /mosquitto/config/mosquitto.conf.
+1680114582: Opening ipv4 listen socket on port 1883.
+1680114582: Opening ipv6 listen socket on port 1883.
+1680114582: mosquitto version 2.0.15 running
+1680114597: mosquitto version 2.0.15 terminating
+1680114600: mosquitto version 2.0.15 starting
+1680114600: Config loaded from /mosquitto/config/mosquitto.conf.
+1680114600: Opening ipv4 listen socket on port 1883.
+1680114600: Opening ipv6 listen socket on port 1883.
+1680114600: mosquitto version 2.0.15 running
+1680114600: New connection from 172.18.0.3:60295 on port 1883.
+1680114600: New client connected from 172.18.0.3:60295 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680114638: mosquitto version 2.0.15 terminating
+1680114641: mosquitto version 2.0.15 starting
+1680114641: Config loaded from /mosquitto/config/mosquitto.conf.
+1680114641: Opening ipv4 listen socket on port 1883.
+1680114641: Opening ipv6 listen socket on port 1883.
+1680114641: mosquitto version 2.0.15 running
+1680114642: New connection from 172.18.0.3:43917 on port 1883.
+1680114642: New client connected from 172.18.0.3:43917 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680114651: mosquitto version 2.0.15 terminating
+1680114655: mosquitto version 2.0.15 starting
+1680114655: Config loaded from /mosquitto/config/mosquitto.conf.
+1680114655: Opening ipv4 listen socket on port 1883.
+1680114655: Opening ipv6 listen socket on port 1883.
+1680114655: mosquitto version 2.0.15 running
+1680114655: New connection from 172.18.0.2:45383 on port 1883.
+1680114655: New client connected from 172.18.0.2:45383 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680114655: New connection from 172.18.0.2:46471 on port 1883.
+1680114655: New client connected from 172.18.0.2:46471 as auto-3C0FB228-0BF9-F1DF-25E9-3CFA8E40E78F (p2, c1, k5).
+1680115189: mosquitto version 2.0.15 terminating
+1680115195: mosquitto version 2.0.15 starting
+1680115195: Config loaded from /mosquitto/config/mosquitto.conf.
+1680115195: Opening ipv4 listen socket on port 1883.
+1680115195: Opening ipv6 listen socket on port 1883.
+1680115195: mosquitto version 2.0.15 running
+1680115196: New connection from 172.18.0.2:60011 on port 1883.
+1680115196: New client connected from 172.18.0.2:60011 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680115196: New connection from 172.18.0.2:49643 on port 1883.
+1680115196: New client connected from 172.18.0.2:49643 as auto-B02F14F9-BE33-1685-4E7B-FA9251D89933 (p2, c1, k5).
+1680115201: New connection from 172.18.0.2:52349 on port 1883.
+1680115201: Client auto-B02F14F9-BE33-1685-4E7B-FA9251D89933 closed its connection.
+1680115201: New client connected from 172.18.0.2:52349 as Aurora_receiver (p2, c1, k5).
+1680115247: mosquitto version 2.0.15 terminating
+1680115251: mosquitto version 2.0.15 starting
+1680115251: Config loaded from /mosquitto/config/mosquitto.conf.
+1680115251: Opening ipv4 listen socket on port 1883.
+1680115251: Opening ipv6 listen socket on port 1883.
+1680115251: mosquitto version 2.0.15 running
+1680115251: New connection from 172.18.0.2:47831 on port 1883.
+1680115251: New client connected from 172.18.0.2:47831 as Aurora_Sender (p2, c1, k60, u'Aurora').
+1680115251: New connection from 172.18.0.2:60775 on port 1883.
+1680115251: New client connected from 172.18.0.2:60775 as auto-1D293801-59F1-961B-2414-B141BB5B7E4A (p2, c1, k5).
+1680115251: Client auto-1D293801-59F1-961B-2414-B141BB5B7E4A closed its connection.
+1680115251: New connection from 172.18.0.2:44289 on port 1883.
+1680115252: Client <unknown> closed its connection.
+1680115252: New connection from 172.18.0.2:33163 on port 1883.
+1680115252: New client connected from 172.18.0.2:33163 as Aurora_receiver (p2, c1, k5).
+1680115259: mosquitto version 2.0.15 terminating
