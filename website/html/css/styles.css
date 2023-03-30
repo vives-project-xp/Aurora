@@ -148,6 +148,10 @@
     font-size: 18px;
   }
   @media (max-width: 500px) {
+    .index
+    {
+      height: 150vh;
+    }
     .slider-label, .slider, .value-label {
       margin-right: 0;
     }
