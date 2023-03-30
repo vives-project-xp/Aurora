@@ -105,7 +105,7 @@ class sender:
              self.SaveConfig()
          try:
             data = config_object[sensor]
-            self.publish(topic_sensor + "/connected", "you are connected")
+            self.publish(topic_sensor + "/connected", {"cmd":"connected","sensor":sensor})
          except:
             count = int(config_object["sensorCount"]["count"])
             config_object[sensor] = {"id": count}
