@@ -7,7 +7,7 @@ from threading import Thread, Timer
 
 broker = 'mqtt.devbit.be'
 port = 1883
-wled = "wled/aurorawled"
+wled = "aurora/wled"
 # generate client ID with pub prefix randomly
 client_id = f'Aurora_Sender'
 username = 'Aurora'
