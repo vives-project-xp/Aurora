@@ -21,14 +21,13 @@ minDistance = 20
 delay = 1
 threads = []
 
-
 class sender:
     connected = False
-    def on_connect(client, userdata, flags, rc):
-        if connected == False:
+    def on_connect(self, client, userdata, flags, rc):
+        if self.connected == False:
             if rc == 0:
                 print("Aurora sender: Connected to MQTT Broker!")
-                connected = True
+                self.connected = True
             else:
                 print("Failed to connect, return code %d\n", rc)
 
