@@ -4,40 +4,47 @@ import random
 import time
 import json
 from threading import Thread, Timer
+from configparser import ConfigParser
 
 broker = 'mqtt.devbit.be'
 port = 1883
-wled = "aurora/wled"
+topic_wled = "aurora/wled"
+topic_sensor = "aurora/sensor"
 # generate client ID with pub prefix randomly
 client_id = f'Aurora_Sender'
 username = 'Aurora'
 password = 'Aurora_420'
-
+sensordata = "/data/sensordata.ini"
+connected = False
+config_object = ConfigParser()
 minDistance = 20
 delay = 1
 threads = []
 
-def on_connect(client, userdata, flags, rc):
-            if rc == 0:
-                print("Aurora sender: Connected to MQTT Broker!")
-            else:
-                print("Failed to connect, return code %d\n", rc)
-
-client = mqtt_client.Client(client_id)
-client.username_pw_set(username, password)
-client.on_connect = on_connect
-client.connect(broker, port)
-
 
 class sender:
     connected = False
+    def on_connect(client, userdata, flags, rc):
+        if connected == False:
+            if rc == 0:
+                print("Aurora sender: Connected to MQTT Broker!")
+                connected = True
+            else:
+                print("Failed to connect, return code %d\n", rc)
+
     def __init__(self):
         print("API Sender started")
-        self.run()
+        global client
+        client = mqtt_client.Client(client_id)
+        client.username_pw_set(username, password)
+        client.on_connect = self.on_connect
+        client.connect(broker, port)
+        self.run(client)
+        
 
     def Toggle(self):
          print("toggle")
-         self.publish(wled, "T")
+         self.publish(topic_wled, "T")
 
 
     def SetColor(self, data):
@@ -46,20 +53,20 @@ class sender:
         green = data["green"]
         blue = data["blue"]
         msg =  '{"seg":[{"col":[['+ red + ','+green +',' + blue + ']]}]}'
-        self.publish(wled + "/api", msg)
+        self.publish(topic_wled + "/api", msg)
 
     def SetPreset(self, data):
         print("setpreset")
         ps = data["ps"]
         msg = '{"ps":' +ps +'}'
-        self.publish(wled + "/api", msg)
+        self.publish(topic_wled + "/api", msg)
 
     def publish(self, topic, msg):
         result = client.publish(topic, msg)
         # result: [0, 1]
         status = result[0]
         if status == 0:
-            #print(f"Send `{msg}` to topic `{topic}`")
+            print(f"Send `{msg}` to topic `{topic}`")
             return
         else:
             print(f"Failed to send message to topic {self.topic}")
@@ -75,7 +82,7 @@ class sender:
     
     def CreateSegment(self, id):
          msg = '{"seg":[{"id":' + str(id) + ',"frz":false}]}'
-         self.publish(wled + "/api", msg)
+         self.publish(topic_wled + "/api", msg)
          threads.append(id)
          t = Timer(delay, self.Task, args=[id])
          t.start()
@@ -86,8 +93,32 @@ class sender:
                 return
         else:
             msg = '{"seg":[{"id":' + str(id) + ',"frz":true}]}'
-            self.publish(wled + "/api", msg)
+            self.publish(topic_wled + "/api", msg)
             return
+        
+    def ConnectSensor(self, msg):
+         config_object.read(sensordata)
+         sensor = str(msg["id"]).removeprefix("Aurora_sensor")
+         try:
+             count = config_object["sensorCount"]
+         except:
+             config_object["sensorCount"] = {"count": 0}
+             self.SaveConfig()
+         try:
+            data = config_object[sensor]
+            self.publish(topic_sensor + "/connected", "you are connected")
+         except:
+            count = int(config_object["sensorCount"]["count"])
+            config_object[sensor] = {"id": count}
+            config_object["sensorCount"] = {"count": count + 1}
+            print("added new sensor:", sensor, "with id:" , count)
+            self.publish(topic_sensor + "/connect", "you are connected")
+            self.SaveConfig()
+            return
+
+    def SaveConfig(self):
+         with open(sensordata, 'w') as conf:
+             config_object.write(conf)
                 
-    def run(self):
+    def run(self, client):
         client.loop_start()
