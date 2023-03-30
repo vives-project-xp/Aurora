@@ -29,7 +29,7 @@ button {
     top: -2%;
 }
 a {
-    position: absolute;
+    position: relative;
     font-size: 110%;
     text-transform: uppercase;
     z-index: 10;
@@ -43,10 +43,11 @@ a {
     margin: 20px;
 }
     a:hover {
-        -webkit-text-stroke: 0.2px black;
         font-size: 120%;
-        transition-delay: 0.1s;
-        
+        background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
+        background-size: cover;
+        -webkit-box-shadow: 0 0 20px 20px rgba(29,31,32,50) inset;
+
     }
  .magic {
     z-index: 5;
