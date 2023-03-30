@@ -26,7 +26,7 @@ ESP32 Devkit V1 Board met WiFi Bluetooth en Dual Core processor
 
 Een plastieken kabelgoot van 2,3 cm hoog en 4,3 cm breed.
 
-<img src="Documenten/images/kabelGoot2.jpg" alt="KabelGoot">
+<img src="Documenten/images/kabelGoot.jpg" alt="KabelGoot">
 
 
 ## 3D prints
