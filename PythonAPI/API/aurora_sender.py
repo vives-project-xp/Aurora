@@ -41,7 +41,7 @@ class sender:
 
 
     def SetColor(self, data):
-        print(json.dumps(data))
+        #print(json.dumps(data))
         red = data["red"]
         green = data["green"]
         blue = data["blue"]
@@ -59,7 +59,7 @@ class sender:
         # result: [0, 1]
         status = result[0]
         if status == 0:
-            print(f"Send `{msg}` to topic `{topic}`")
+            #print(f"Send `{msg}` to topic `{topic}`")
             return
         else:
             print(f"Failed to send message to topic {self.topic}")
