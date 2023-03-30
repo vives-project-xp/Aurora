@@ -70,9 +70,15 @@ init();
 
 function Color(){
     let data = {
+<<<<<<< HEAD
         redSlider: document.getElementById("red-value").value,
         greenSlider: document.getElementById("green-value").value,
         blueSlider: document.getElementById("blue-value").value
+=======
+        red: redSlider.value,
+        green: greenSlider.value,
+        blue: blueSlider.value
+>>>>>>> 84de045f1d52d61b26ba8e56aac47d20c00704b1
     }
     Post("color", data);
 }
@@ -109,7 +115,6 @@ function Preset() {
 
 function Post(page, data){
   //fetch("http://" + document.getElementById("api").value + "/" + page, {
-  print(page + " : " + data);
   fetch("http://aurora.local:5500/" + page, {
       method: 'post',
       body: JSON.stringify(data),
