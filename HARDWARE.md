@@ -30,6 +30,9 @@ Een plastieken kabelgoot van 2,3 cm hoog en 4,3 cm breed
 
 ## 3D prints
 
+3D prints voor de kapelgoot omhoog te houden en cases voor de sensors
+<img src="Documenten/images/AURORA_MASCOT.jpg" alt="AURORA_MASCOT">
+
 ## Voeding
 
 
