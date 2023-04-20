@@ -17,8 +17,8 @@ password = 'Aurora_420'
 sensordata = "/data/sensordata.ini"
 connected = False
 config = ConfigParser()
-minDistance = 200
-delay = 1
+minDistance = 180
+delay = 2
 threads = []
 
 class sender:
@@ -104,15 +104,23 @@ class sender:
     def MeasureTask(self):
         config.read(sensordata)
         if config.has_section("sensors"):
-            for (sensor,data) in list(config.items("sensors")):
-                data = json.loads(config.get("sensors", sensor))
-                if int(data["id"]) == self.sensorId:
-                    msg = '{"cmd":"measure","sensor":"' + str(sensor) +'"}'
-                    self.publish(topic_sensor + "/measure", msg)
-            self.sensorId+=1
-            if self.sensorId == int(config.get("data", "sensorcount")):
+            if(self.sensorId == 0):
+                for (sensor,data) in list(config.items("sensors")):
+                    data = json.loads(config.get("sensors", sensor))
+                    if (int(data["id"])+1) % 2 == 0:
+                            self.Measure(sensor)
+                self.sensorId = 1
+            else:
+                for (sensor,data) in list(config.items("sensors")):
+                    data = json.loads(config.get("sensors", sensor))
+                    if (int(data["id"])+1) % 2 != 0:
+                            self.Measure(sensor)
                 self.sensorId = 0
-        Timer(0.5,self.MeasureTask).start()           
+        Timer(0.5,self.MeasureTask).start()
+
+    def Measure(self, sensor):
+               msg = '{"cmd":"measure","sensor":"' + str(sensor) +'"}'
+               self.publish(topic_sensor + "/measure", msg)    
         
     def ConnectSensor(self, msg):
          config.read(sensordata)
