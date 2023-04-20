@@ -1,7 +1,8 @@
 # Aurora
-Uur inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips,  also we will try to develop a person detection system
+Uur inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips <br /> 
+We Also will try to develop a person detection system with sensors
 
-![ifJPbUm9XMsQdt7AQAets-1200-80](https://user-images.githubusercontent.com/83211667/222449053-1e7f0ad8-25d7-4f5e-bab7-4125bcd5382a.jpg)
+<img src="Documenten/images/Readme/Aurora%204k.jpg" alt="Aurora" width="700" height="300">
 
 
 ## Table of contents
@@ -19,8 +20,8 @@ Uur inspiration for this project is the northern lights in Norway. This we want 
 
 ## Short Discription
 
-The project for the ARGB led strip and motion sensor.
-This is an interactive LED strip that tracks people 
+The project for the ARGB led strip and motion sensors. </br>
+This is an interactive LED strip that tracks people and also can display random effects
 
 ## Required
 
@@ -59,7 +60,11 @@ No configuration yet
 
 ## Troubleshooting
 
-No problems yet
+Problems
+1. Sensors kunnen niet ver genoeg meten
+2. Voltage drop op ledstrip
+3. communicatie tussen sensoren  
+4. Hoe ledstrip omhoog houden 
 
 ## FAQ
 
@@ -68,10 +73,16 @@ no questions yet
 ## Maintainers
 Made by  Glenn Coopman, Aitor Vannevel, thibaut schroyens, Thomas Oddery and Robbe Verhelst
 
-## project photos
+## project Idea
+a bridge over the minnewater in 2019 </br>
+</br>
+<img src="Documenten/images/Readme/bridge%20lights%20V2.jpg" alt="a bridge over the minnewater in 2019" width="600" height="300">
 
-![image](https://user-images.githubusercontent.com/83211667/222438233-dfeb06dd-3df8-4e37-b3ea-25aaaac1e787.png)
 
 
-### sfeerbeelden
-![20230309_151527](https://user-images.githubusercontent.com/83211667/224052116-a657af65-2819-487f-a10e-55401445fedb.jpg)
+## mood images
+
+<img src="Documenten/images/Readme/mood%20images%201.jpg" alt="mood image 1" width="400" >
+<img src="Documenten/images/Readme/neopixel.jpg" alt="mood image 1" width="400" height = "200" ></br>
+<img src="Documenten/images/Readme/first%20demo.jpg" alt="mood image 1" width="400" >
+<img src="Documenten/images/Readme/kabelGoot.jpg" alt="mood image 1" width="250" >
