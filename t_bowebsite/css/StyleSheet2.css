@@ -42,14 +42,12 @@ a {
     transition-delay: 0.1s;
     line-height: 0px;
     top: 0.5%;
-
+    background-color:transparent;
 
 }
     a:hover {
         font-size: 120%;
-        background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
-        background-size: cover;
-        -webkit-box-shadow: 0 0 20px 20px rgba(29,31,32,50) inset;
+        background-color: transparent;
 
     }
 
@@ -80,7 +78,7 @@ a {
     top: calc(50%-10rem);
     left: calc(50%-10rem);
 }
- 
+
 
 /*ledstrip css*/
 
