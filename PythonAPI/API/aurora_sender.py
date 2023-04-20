@@ -17,7 +17,7 @@ password = 'Aurora_420'
 sensordata = "/data/sensordata.ini"
 connected = False
 config = ConfigParser()
-minDistance = 50
+minDistance = 200
 delay = 1
 threads = []
 
@@ -112,7 +112,7 @@ class sender:
             self.sensorId+=1
             if self.sensorId == int(config.get("data", "sensorcount")):
                 self.sensorId = 0
-        Timer(0.3,self.MeasureTask).start()           
+        Timer(0.5,self.MeasureTask).start()           
         
     def ConnectSensor(self, msg):
          config.read(sensordata)
