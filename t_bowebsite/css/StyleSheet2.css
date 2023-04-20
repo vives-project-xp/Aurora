@@ -6,15 +6,17 @@ html, body {
     margin: 0;
     
 }
-.scene {
-    position: relative;
-    height: 50%;
-    background: #1d1f20;
-    padding: 1rem;
-    text-align: center;
-    padding-top:1%;
-    
-}
+
+    .scene {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #1d1f20;
+        padding: 1rem;
+        text-align: center;
+        padding-top: 1%;
+    }
+
 button {
     position: relative;
     font-size: 4%;
@@ -26,10 +28,10 @@ button {
     border: none;
     cursor: pointer;
     font-size: 125%;
-    top: -2%;
+    top: -0.3%;
 }
 a {
-    position: absolute;
+    position: relative;
     font-size: 110%;
     text-transform: uppercase;
     z-index: 10;
@@ -39,8 +41,9 @@ a {
     -webkit-transition: 0.5s;
     transition-delay: 0.1s;
     line-height: 0px;
-    top: -2%;
-    margin: 20px;
+    top: 0.5%;
+
+
 }
     a:hover {
         -webkit-text-stroke: 0.2px black;
@@ -48,12 +51,13 @@ a {
         transition-delay: 0.1s;
         
     }
- .magic {
+
+.magic {
     z-index: 5;
     position: absolute;
     width: 15rem;
     height: 15rem;
-    background-color: #1d1f20;
+    background-color: transparent;
     background-size: cover;
     background-position: center;
     border-radius: 10%;
@@ -61,18 +65,37 @@ a {
     top: calc(50%-10rem);
     left: calc(50%-10rem);
 }
-    .magic:hover {
-        z-index: 5;
-        position: absolute;
-        width: 15rem;
-        height: 15rem;
-        background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
-        background-size: cover;
-        background-position: center;
-        border-radius: 10%;
-        -webkit-box-shadow: 0 0 20px 20px rgba(29,31,32,50) inset;
-        top: calc(50%-10rem);
-        left: calc(50%-10rem);
+    
+.scene:hover .magic {
+    z-index: 5;
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+    -webkit-box-shadow: 0 0 20px 20px rgba(29,31,32,50) inset;
+    top: calc(50%-10rem);
+    left: calc(50%-10rem);
+}
+ 
+
+/*ledstrip css*/
+
+
+    body.welcoming {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 200%;
     }
+
+#welcome {
+    color: black;
+    font-size: 150%;
+    margin: auto;
+    font-family: 'Agency FB';
+}
 
 
