@@ -73,7 +73,7 @@ def handle_subscribe(client, userdata, mid, granted_qos):
     
 @mqtt.on_message()
 def handle_message(client, userdata, msg):
-    print(msg.topic,str(msg.payload.decode()))
+    #print(msg.topic,str(msg.payload.decode()))
     if msg.topic == topic_connect:
         sender.ConnectSensor(json.loads(str(msg.payload.decode())))
     elif msg.topic == topic_sensor:
