@@ -60,7 +60,11 @@ No configuration yet
 
 ## Troubleshooting
 
-No problems yet
+Problems
+1. Sensors kunnen niet ver genoeg meten
+2. Voltage drop op ledstrip
+3. communicatie tussen sensoren  
+4. Hoe ledstrip omhoog houden 
 
 ## FAQ
 
