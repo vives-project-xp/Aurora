@@ -28,7 +28,6 @@ Een plastieken kabelgoot van 2,3 cm hoog en 4,3 cm breed.
 
 <img src="Documenten/images/kabelGoot.jpg" alt="KabelGoot">
 
-
 ## 3D prints
 
 3D prints voor de kapelgoot omhoog te houden en cases voor de sensors.

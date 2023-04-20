@@ -63,4 +63,4 @@ docker compose up -d --build
 ```
 
 It can take a while until everything has downloaden
-If everything works as it should, you can search for [aurora.local](http://aurora.local/)
+If everything works as it should, you can search for [aurora.local](http://aurora.local/) 
