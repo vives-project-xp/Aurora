@@ -6,9 +6,11 @@
     <link rel="stylesheet" href="./css/styles.css">
     
   </head>
-  <body class="index">
+  <body class="index" onload="Loop()">
     <div class="container">
       <h1>RGB Slider Application</h1>
+      <ul id="sensors">
+      </ul>
       <div class="slider-container">
         <label class="slider-label" for="red-slider">Red</label>
         <input onchange="Color()" class="slider" id="red-slider" type="range" min="0" max="255"value="0">

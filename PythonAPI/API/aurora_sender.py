@@ -5,6 +5,7 @@ from datetime import datetime
 import json
 from threading import Thread, Timer
 from configparser import ConfigParser
+import pytz
 
 broker = 'mqtt.devbit.be'
 port = 1883
@@ -17,9 +18,10 @@ password = 'Aurora_420'
 sensordata = "/data/sensordata.ini"
 connected = False
 config = ConfigParser()
-minDistance = 180
-delay = 2
+minDistance = 100
+delay = 1
 threads = []
+timezone = pytz.timezone('Europe/Brussels')
 
 class sender:
     connected = False
@@ -46,6 +48,25 @@ class sender:
     def Toggle(self):
          print("toggle")
          self.publish(topic_wled, "T")
+
+    def Sensors(self):
+         config.read(sensordata)
+         if not config.has_section("data"): return
+         if not config.has_section("sensors"): return
+         msg = []
+         msg.clear
+         for (sensor, data) in list(config.items("sensors")):
+            data = json.loads(config.get("sensors", sensor))
+            msg.append(data)
+         return msg
+    
+    def UpdateSensor(self, data):
+        sensor = data["name"]
+        id = data["id"]
+        data = json.loads(config.get("sensors", sensor))
+        data["id"] = str(id)
+        config.set("sensors", str(sensor), str(data).replace("'", '"'))
+        self.SaveConfig()
 
 
     def SetColor(self, data):
@@ -76,6 +97,10 @@ class sender:
          config.read(sensordata)
          id = str(data["id"]).removeprefix("Aurora_sensor")
          distance = data["distance"]
+         data = json.loads(config.get("sensors", id))
+         data["lastseen"] = str(datetime.now(tz=timezone).strftime("%d/%m/%Y %H:%M:%S"))
+         config.set("sensors", str(id), str(data).replace("'", '"'))
+         self.SaveConfig()
          #print(id, distance)
          if(distance >= minDistance or distance < 0): return
          else:
@@ -83,11 +108,10 @@ class sender:
               self.CreateSegment(int(json.loads(config.get("sensors", id))["id"]) + 1)
     
     def CreateSegment(self, id):
-         #if id not in threads:
-         print(id, "on")
-         msg = '{"seg":[{"id":' + str(id) + ',"frz":false}]}'
-         self.publish(topic_wled + "/api", msg)
-
+         if id not in threads:
+            print(id, "on")
+            msg = '{"seg":[{"id":' + str(id) + ',"frz":false}]}'
+            self.publish(topic_wled + "/api", msg)
          threads.append(id)
          t = Timer(delay, self.ColorTask, args=[id])
          t.start()
@@ -116,7 +140,7 @@ class sender:
                     if (int(data["id"])+1) % 2 != 0:
                             self.Measure(sensor)
                 self.sensorId = 0
-        Timer(0.5,self.MeasureTask).start()
+        Timer(0.3,self.MeasureTask).start()
 
     def Measure(self, sensor):
                msg = '{"cmd":"measure","sensor":"' + str(sensor) +'"}'
@@ -135,7 +159,7 @@ class sender:
 
          if not config.has_option("sensors" , sensor):
             count = int(config.get("data","sensorcount"))
-            data = '{"id":"' + str(count)+ '","lastseen":"' + str(datetime.now().strftime("%d/%m/%Y %H:%M:%S")) + '"}'
+            data = '{"name":"'+sensor + '","id":"' + str(count)+ '","lastseen":"' + str(datetime.now(tz=timezone).strftime("%d/%m/%Y %H:%M:%S")) + '"}'
             config.set("sensors", sensor, data)
             config.set("data", "sensorcount", str(count + 1))
             print("added new sensor:", sensor, "with id:" , count)

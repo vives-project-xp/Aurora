@@ -8,6 +8,15 @@ var hexInput = document.getElementById("hex-input");
 var decimalInput = document.getElementById("decimal-input");
 var colorBox = document.getElementById("color-box");
 
+function onLoad(){
+}
+
+function Loop(){
+  timeout = setInterval(function() {
+    Sensors();
+  }, 1000);
+}
+
 function updateColor() {
   var red = redSlider.value;
   var green = greenSlider.value;
@@ -81,6 +90,44 @@ function Toggle(){
     Post("toggle", "");
 }
 
+async function Sensors(){
+    sensors = JSON.parse(await Post("sensors"));
+
+    //clearing sensor list
+    //document.getElementById("sensors").textContent = "";
+    for(sensor of sensors){
+      AddSensor(sensor)
+    }
+}
+
+function AddSensor(sensor){
+  const sensors = document.getElementById("sensors");
+  if(sensors.querySelector("#" + sensor["name"]) == null){
+    const node = document.createElement('li');
+    const name = document.createElement("p");
+    name.innerHTML = sensor["name"];
+    name.setAttribute("id", sensor["name"]);
+    const id = document.createElement("input");
+    id.setAttribute("type", "text");
+    id.setAttribute("value", sensor["id"]);
+    id.setAttribute("onchange", 'UpdateSensor("' + sensor["name"] + '",this.value)');
+    const time = document.createTextNode(sensor["lastseen"]);
+    node.appendChild(name);
+    node.appendChild(id);
+    node.appendChild(time);
+    
+    document.getElementById("sensors").appendChild(node);
+  }
+}
+
+function UpdateSensor(name, id){
+  console.log("update " + name + " to " + id);
+  let data = {
+    name: name,
+    id: id
+  }
+  Post("updatesensor", data);
+}
 
 
 /*Form()
@@ -107,16 +154,19 @@ function Preset() {
   Post("preset", data)
 }
 
-function Post(page, data){
+async function Post(page, data){
   //fetch("http://" + document.getElementById("api").value + "/" + page, {
-  fetch("http://aurora.local:5500/" + page, {
+  let response = await fetch("http://localhost:5500/" + page, {
       method: 'post',
       body: JSON.stringify(data),
       headers: {
           'Content-Type': 'application/json'
       }
-  })    
+  });
+  msg = await response.text();
+  return msg; 
 }
+
 
 
 

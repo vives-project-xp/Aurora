@@ -1,4 +1,4 @@
-from flask import Flask, json, request, render_template, make_response, redirect
+from flask import Flask, json, request, render_template, make_response, redirect, jsonify
 from flask_mqtt import Mqtt
 from flask_cors import CORS
 from aurora_sender import sender
@@ -40,6 +40,22 @@ def preset():
 @app.route('/toggle', methods=['POST'])
 def toggle():
     sender.Toggle()
+    return ("", 204)
+
+@app.route('/sensors', methods=['POST'])
+def sensors():
+        data = sender.Sensors()
+        response = app.response_class(
+        response=json.dumps(data),
+        status=200,
+        mimetype='application/json'
+        )
+        return response
+
+@app.route('/updatesensor', methods=['POST'])
+def updatesensor():
+    json = request.get_json()
+    sender.UpdateSensor(json)
     return ("", 204)
 
 
