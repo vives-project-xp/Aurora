@@ -1,0 +1,13 @@
+﻿body.welcoming {
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 200%;
+}
+
+#welcome {
+    color: black;
+    font-size: 150%;
+    margin-top: 0.5%;
+    font-family: 'Agency FB';
+}

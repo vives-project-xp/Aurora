@@ -1,0 +1,124 @@
+﻿.container {
+    position: relative;
+    text-align: center;
+}
+
+img {
+    max-width: 500%;
+    max-height: 500%;
+    border-radius: 25px;
+    border: 500px solid #1d1f20;
+    border-style: none solid none none;
+    margin-top:5%;
+}
+.image {
+    flex-basis: 40%
+}
+
+.text {
+    padding-left: 2%;
+    position: absolute;
+    bottom: 12%;
+    left: 45%;
+}
+
+
+
+
+#title {
+    font-family: 'Agency FB';
+    font-size: 300%;
+    text-transform: uppercase;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+#extrainfo {
+    color: mediumpurple;
+    text-decoration: none;
+    font-size: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Arial Rounded MT';
+}
+
+
+p {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
+    font-size: 400%;
+    margin-bottom: 0;
+    margin-bottom: -0.25em;
+    display: block;
+    cursor: pointer;
+    width: 500px;
+    cursor: default;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 100px;
+}
+    p.infobubble {
+        font-family: "Archivo Black", sans-serif;
+        font-weight: normal;
+        font-size: 400%;
+        margin-bottom: 0;
+        margin-bottom: -0.25em;
+        display: block;
+        width: 75%;
+        cursor: default;
+        text-align: right;
+        margin-left: auto;
+        margin-right: 50px;
+        color: mediumpurple;
+    }
+    p.extrabubble {
+        font-family: "Archivo Black", sans-serif;
+        font-weight: normal;
+        font-size: 100%;
+        text-align: center;
+        width: 90%;
+    }
+    .gradient-text {
+        background-color: mediumpurple;
+        background-image: linear-gradient( 315deg, mediumpurple 16.666%, #00ffff 33.333%, #00ffff 50%, #0000ff 66.666%, mediumpurple 83.333%, mediumpurple 83.333%);
+        background-size: 100%;
+        background-repeat: repeat;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow-text-simple-animation-rev 3s ease forwards;
+    }
+
+    .gradient-text:hover {
+        animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+    }
+
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+
+    40% {
+        background-size: 650%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+
+    80% {
+        background-size: 650%;
+    }
+
+    100% {
+        background-size: 650%;
+    }
+}
