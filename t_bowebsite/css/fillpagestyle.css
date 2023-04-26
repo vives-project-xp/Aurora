@@ -89,6 +89,7 @@ p {
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: rainbow-text-simple-animation-rev 3s ease forwards;
+        margin-right:5%;
     }
 
     .gradient-text:hover {
