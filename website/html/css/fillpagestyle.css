@@ -6,7 +6,8 @@
 
 img {
     width: 75%;
-    height: 75%;
+    height: auto;
+    max-width: 80%;
     border-radius: 25px;
     border: 500px solid #1d1f20;
     border-style: none solid none none;
