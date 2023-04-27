@@ -7,7 +7,7 @@ from threading import Thread, Timer
 from configparser import ConfigParser
 import pytz
 
-broker = 'mqtt.devbit.be'
+broker = 'mosquitto'
 port = 1883
 topic_wled = "aurora/wled"
 topic_sensor = "aurora/sensor"
@@ -18,8 +18,9 @@ password = 'Aurora_420'
 sensordata = "/data/sensordata.ini"
 connected = False
 config = ConfigParser()
-minDistance = 100
+minDistance = 200
 delay = 1
+measurements = []
 threads = []
 timezone = pytz.timezone('Europe/Brussels')
 
@@ -102,10 +103,17 @@ class sender:
          config.set("sensors", str(id), str(data).replace("'", '"'))
          self.SaveConfig()
          #print(id, distance)
-         if(distance >= minDistance or distance < 0): return
+         if(distance >= minDistance or distance < 0):
+            if(id in measurements):
+                measurements.remove(id)
+                print("removed", id)
          else:
+            if(id in measurements):
               #print(sensor)
               self.CreateSegment(int(json.loads(config.get("sensors", id))["id"]) + 1)
+            else:
+                print("added", id)
+                measurements.append(id)
     
     def CreateSegment(self, id):
          if id not in threads:
@@ -130,7 +138,10 @@ class sender:
         if config.has_section("sensors"):
             if(self.sensorId == 0):
                 for (sensor,data) in list(config.items("sensors")):
-                    data = json.loads(config.get("sensors", sensor))
+                    try:
+                        data = json.loads(config.get("sensors", sensor))
+                    except:
+                        return
                     if (int(data["id"])+1) % 2 == 0:
                             self.Measure(sensor)
                 self.sensorId = 1
@@ -140,7 +151,7 @@ class sender:
                     if (int(data["id"])+1) % 2 != 0:
                             self.Measure(sensor)
                 self.sensorId = 0
-        Timer(0.3,self.MeasureTask).start()
+        Timer(0.15,self.MeasureTask).start()
 
     def Measure(self, sensor):
                msg = '{"cmd":"measure","sensor":"' + str(sensor) +'"}'

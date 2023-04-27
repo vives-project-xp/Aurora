@@ -8,13 +8,10 @@ var hexInput = document.getElementById("hex-input");
 var decimalInput = document.getElementById("decimal-input");
 var colorBox = document.getElementById("color-box");
 
-function onLoad() {
-}
-
-function Loop() {
-    timeout = setInterval(function () {
-        Sensors();
-    }, 1000);
+function Loop(){
+  timeout = setInterval(function() {
+    Sensors();
+  }, 1000);
 }
 
 function updateColor() {
@@ -95,8 +92,10 @@ async function Sensors() {
 
     //clearing sensor list
     //document.getElementById("sensors").textContent = "";
-    for (sensor of sensors) {
+    if(sensors){
+      for(sensor of sensors){
         AddSensor(sensor)
+      }
     }
 }
 

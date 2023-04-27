@@ -9,7 +9,7 @@ sender = sender()
 
 app = Flask(__name__)
 CORS(app)
-app.config['MQTT_BROKER_URL'] = 'mqtt.devbit.be' #broker url
+app.config['MQTT_BROKER_URL'] = 'mosquitto' #broker url
 app.config['MQTT_BROKER_PORT'] = 1883  # default port for non-tls connection
 #app.config['MQTT_USERNAME'] = 'Aurora'  # set the username here if you need authentication for the broker
 #app.config['MQTT_PASSWORD'] = 'Aurora_420'  # set the password here if the broker demands authentication
@@ -23,7 +23,7 @@ mqtt = Mqtt(app)
 
 @app.route('/', methods=['GET'])
 def main():
-    return redirect("http://aurora.local", code=302)
+    return redirect("website", code=302)
 
 @app.route('/color', methods=['POST'])
 def color():
