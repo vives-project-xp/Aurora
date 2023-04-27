@@ -9,6 +9,8 @@
   <body class="index" onload="Loop()">
       <div class="container">
           <h1>RGB Slider Application</h1>
+          <ul id="sensors">
+          </ul>
           <div class="slider-container">
               <label class="slider-label" for="red-slider">Red</label>
               <input onchange="Color()" class="slider" id="red-slider" type="range" min="0" max="255" value="0">
@@ -35,14 +37,12 @@
               <button onclick="Toggle()">Toggle</button>
           </div>
           <!-- Here is the preset
-    and ze test test-->
+     and ze test test-->
           <h1>Give a Preset</h1>
           <div class="input-container">
               <label class="input-label" for="Preset-input">Enter your Preset:</label>
               <input onchange="Preset()" id="preset" class="preset" oninput="this.nextElementSibling.value = this.value"></p>
           </div>
-          <ul id="sensors">
-          </ul>
           <script src="./javascript/javascript.js"></script>
       </div>
   </body>
