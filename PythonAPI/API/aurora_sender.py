@@ -32,7 +32,7 @@ class sender:
             if rc == 0:
                 print("Aurora sender: Connected to MQTT Broker!")
                 self.connected = True
-                self.MeasureTask()
+                #self.MeasureTask()
             else:
                 print("Failed to connect, return code %d\n", rc)
 
@@ -151,7 +151,7 @@ class sender:
                     if (int(data["id"])+1) % 2 != 0:
                             self.Measure(sensor)
                 self.sensorId = 0
-        Timer(0.15,self.MeasureTask).start()
+        Timer(0.05,self.MeasureTask).start()
 
     def Measure(self, sensor):
                msg = '{"cmd":"measure","sensor":"' + str(sensor) +'"}'
