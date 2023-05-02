@@ -1,49 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+﻿<!DOCTYPE html>
+
+<html>
+<head>
     <meta charset="UTF-8">
-    <title>RGB Slider Application</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    
-  </head>
-  <body class="index" onload="Loop()">
-    <div class="container">
-      <h1>RGB Slider Application</h1>
-      <ul id="sensors">
-      </ul>
-      <div class="slider-container">
-        <label class="slider-label" for="red-slider">Red</label>
-        <input onchange="Color()" class="slider" id="red-slider" type="range" min="0" max="255"value="0">
-        <span class="value-label" id="red-value">0</span>
-      </div>
-      <div class="slider-container">
-        <label class="slider-label" for="green-slider">Green</label>
-        <input onchange="Color()" class="slider" id="green-slider" type="range" min="0" max="255"value="0">
-        <span class="value-label" id="green-value">0</span>
-      </div>
-      <div class="slider-container">
-        <label class="slider-label" for="blue-slider">Blue</label>
-        <input onchange="Color()" class="slider" id="blue-slider" type="range" min="0" max="255"value="0">
-        <span class="value-label" id="blue-value">0</span>
-      </div>
-      <div class="color-box" id="color-box"></div>
-      <div class="input-container">
-        <label class="input-label" for="hex-input">Hex:</label>
-        <input class="hex-input" id="hex-input" type="text" readonly>
-        <label class="input-label" for="decimal-input">Decimal:</label>
-        <input class="decimal-input" id="decimal-input" type="text" readonly>
-      </div>
-      <div class ="button-container">
-        <button onclick="Toggle()">Toggle</button>
-      </div>
-      <!-- Here is the preset 
-       and ze test test-->
-      <h1>Give a Preset</h1>
-	    <div class="input-container">
-		      <label class = "input-label" for="Preset-input">Enter your Preset:</label>
-		      <input onchange="Preset()"  id="preset" class="preset" oninput="this.nextElementSibling.value = this.value"></p>
-        </div>
-      <script src="./javascript/javascript.js"></script>
-    </div>
-  </body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora</title>
+    <!--The layout of the entire site, and the layout of all those sites-->
+    <frameset rows="6%,6%,88%" frameborder="0" framespacing="0">
+        <frame name="boven" src="boven.html" scrolling="no" noresize="noresize" frameborder="no"></frame>
+        <frame name="ledstrip" src="ledstrip.html" scrolling="no" noresize="noresize" frameborder="no" />
+        <frame name="fillpage" src="fillpage.html" noresize="noresize" frameborder="no" />
+</head>
+<body>
+
+</body>
 </html>

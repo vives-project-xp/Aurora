@@ -1,5 +1,5 @@
 # Aurora
-Uur inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips <br /> 
+Our inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips <br /> 
 We Also will try to develop a person detection system with sensors
 
 <img src="Documenten/images/Readme/Aurora%204k.jpg" alt="Aurora" width="700" height="300">
