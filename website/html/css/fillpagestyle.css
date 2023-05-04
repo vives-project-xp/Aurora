@@ -1,22 +1,29 @@
 ﻿.container {
     position: relative;
     text-align: center;
-    
+    display: flex;
+    flex-direction:row;
 }
 
 img {
     width: 40%;
     height: auto;
     max-width: 40%;
-    border-radius: 25px;
+    /* border-radius: 25px;
     border: 500px solid #1d1f20;
     border-style: none solid none none;
-    margin-top: 4%;
+    */ margin-top: 4%;
 }
 .image {
     flex-basis: 40%
 }
-
+.blackbox {
+    background-color: #1d1f20;
+    flex: 33.33%;
+    width: 50%;
+    height:100%;
+    
+}
 .text {
     padding-left: 2%;
     position: absolute;
