@@ -7,14 +7,19 @@
     margin-top: 4%;
     margin-left: 5%;
 }
-
+.imageunderpage {
+    position: relative;
+    height: auto;
+    object-fit: cover;
+    width: 50%;
+    border-radius: 0px 25px 25px 0px;
+}
 img {
     position: relative;
     height: auto;
     object-fit: cover;
     width: 50%;
     border-radius: 25px 0 0 25px;
- 
 }
 .blackbox {
     flex: auto;
@@ -24,7 +29,14 @@ img {
     text-align: center;
     border-radius: 0px 25px 25px 0px;
 }
-
+.blackboxunderpage {
+    flex: auto;
+    position: relative;
+    height: auto;
+    background-color: #1d1f20;
+    text-align: center;
+    border-radius: 25px 0px 0px 25px;
+}
 #title {
     font-family: 'Agency FB';
     font-size: 3vw;
@@ -34,6 +46,7 @@ img {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    color: #1d1f20;
 }
 #extrainfo {
     color: mediumpurple;
@@ -45,29 +58,29 @@ img {
     font-family: 'Arial Rounded MT';
 }
 
-    p.infobubble {
-        font-family: "Archivo Black", sans-serif;
-        font-weight: normal;
-        font-size: 4vw;
-        margin-bottom: 0;
-        margin-bottom: -0.25em;
-        display: block;
-        width: 75%;
-        cursor: default;
-        text-align: right;
-        margin-left: auto;
-        margin-right: 5%;
-        color: mediumpurple;
-    
-    }
-    p.extrabubble {
-        font-family: "Archivo Black", sans-serif;
-        font-weight: normal;
-        font-size: 1vw;
-        text-align: left;
-        width: 90%;
-        margin: 5%;
-    }
+p.infobubble {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
+    font-size: 4vw;
+    margin-bottom: 0;
+    margin-bottom: -0.25em;
+    display: block;
+    width: 75%;
+    cursor: default;
+    text-align: right;
+    margin-left: auto;
+    margin-right: 5%;
+    color: #1d1f20;
+}
+p.extrabubble {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
+    font-size: 1.3vw;
+    text-align: left;
+    width: 90%;
+    margin: 5%;
+    color: #b299e6;
+}
 p.gradient-text {
     background-color: mediumpurple;
     background-image: linear-gradient( 315deg, mediumpurple 16.666%, #00ffff 33.333%, #00ffff 50%, #0000ff 66.666%, mediumpurple 83.333%, mediumpurple 83.333%);
