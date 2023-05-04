@@ -1,0 +1,187 @@
+﻿body {
+  /* background: linear-gradient(to bottom, #d9d9d9 0%, mediumpurple 85%, mediumpurple 100%);
+    background-repeat: no-repeat;
+    Background-attachment: fixed;
+    */
+  background-color: #d9d9d9;
+  justify-content: center;
+  margin: auto;
+}
+body div {
+  margin: 0 auto;
+}
+
+.top {
+  display: flex;
+}
+
+.bottom {
+  text-align: center;
+  width: 75%;
+}
+
+.colorpicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.presets {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+}
+
+h1 {
+  /* fontsize header 1
+    test test*/
+  font-size: 28px;
+  margin-bottom: 30px;
+  align-items: center;
+  color: mediumpurple;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-label {
+  margin-bottom: 10px;
+  color: black;
+  font-family: "Agency FB";
+}
+
+.slider {
+  width: 255px;
+}
+
+#red-slider {
+  appearance: none;
+  height: 10px;
+  background: linear-gradient(90deg, red 0%, grey 0%);
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+#green-slider {
+  appearance: none;
+  height: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #00ff00 0%, grey 0%);
+  border-radius: 6px;
+}
+
+#blue-slider {
+  appearance: none;
+  height: 10px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, blue 0%, grey 0%);
+  border-radius: 6px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+}
+
+.slider::-moz-ranger-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+}
+
+.value-label {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.color-box {
+  width: 300px;
+  height: 75px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1.5px solid #d9d9d9;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.input-label {
+  margin-top: 5px;
+  margin-right: 10px;
+  color: black;
+  font-family: "Agency FB";
+}
+
+.hex-input {
+  width: 150px;
+  font-size: 16px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1.5px solid mediumpurple;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+}
+
+.reset-input {
+  width: 150px;
+  font-size: 16px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1.5px solid black;
+}
+
+.decimal-input {
+  width: 150px;
+  font-size: 16px;
+  padding: 5px;
+  border: 1.5px solid mediumpurple;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+}
+
+.button-container {
+  width: 100%;
+  height: 5vw;
+  text-align: center;
+  margin: 10px;
+}
+button {
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  background-color: mediumpurple;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 125%;
+}
+
+button:hover {
+  background-color: mediumslateblue;
+}
+
+label {
+  color: #fff;
+  font-size: 18px;
+}

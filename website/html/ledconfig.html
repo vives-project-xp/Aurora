@@ -1,49 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>RGB slider application</title>
-    <link rel="stylesheet" href="./css/indexstyle.css">
-    
-  </head>
-  <body class="index" onload="Loop()">
-      <div class="container">
-          <h1>RGB Slider Application</h1>
-          <div class="slider-container">
-              <label class="slider-label" for="red-slider">Red</label>
-              <input onchange="Color()" class="slider" id="red-slider" type="range" min="0" max="255" value="0">
-              <span class="value-label" id="red-value">0</span>
-          </div>
-          <div class="slider-container">
-              <label class="slider-label" for="green-slider">Green</label>
-              <input onchange="Color()" class="slider" id="green-slider" type="range" min="0" max="255" value="0">
-              <span class="value-label" id="green-value">0</span>
-          </div>
-          <div class="slider-container">
-              <label class="slider-label" for="blue-slider">Blue</label>
-              <input onchange="Color()" class="slider" id="blue-slider" type="range" min="0" max="255" value="0">
-              <span class="value-label" id="blue-value">0</span>
-          </div>
-          <div class="color-box" id="color-box"></div>
-          <div class="input-container">
-              <label class="input-label" for="hex-input">Hex:</label>
-              <input class="hex-input" id="hex-input" type="text" readonly>
-              <label class="input-label" for="decimal-input">Decimal:</label>
-              <input class="decimal-input" id="decimal-input" type="text" readonly>
-          </div>
-          <div class="button-container">
-              <button onclick="Toggle()">Toggle</button>
-          </div>
-          <!-- Here is the preset
-    and ze test test-->
-          <h1>Give a Preset</h1>
-          <div class="input-container">
-              <label class="input-label" for="Preset-input">Enter your Preset:</label>
-              <input onchange="Preset()" id="preset" class="preset" oninput="this.nextElementSibling.value = this.value"></p>
-          </div>
-          <ul id="sensors">
-          </ul>
-          <script src="./javascript/javascript.js"></script>
-      </div>
-  </body>
+    <link rel="stylesheet" href="./css/ledconfigstyle.css">
+
+</head>
+
+<body class="index" onload="Loop()">
+    <div class="top">
+        <div class="colorpicker">
+            <h1>Pick a color</h1>
+            <div class="slider-container">
+                <label class="slider-label" for="red-slider">Red</label>
+                <input onchange="Color()" class="slider" id="red-slider" type="range" min="0" max="255" value="0">
+                <span class="value-label" id="red-value">0</span>
+            </div>
+            <div class="slider-container">
+                <label class="slider-label" for="green-slider">Green</label>
+                <input onchange="Color()" class="slider" id="green-slider" type="range" min="0" max="255" value="0">
+                <span class="value-label" id="green-value">0</span>
+            </div>
+            <div class="slider-container">
+                <label class="slider-label" for="blue-slider">Blue</label>
+                <input onchange="Color()" class="slider" id="blue-slider" type="range" min="0" max="255" value="0">
+                <span class="value-label" id="blue-value">0</span>
+            </div>
+            <div class="color-box" id="color-box"></div>
+            <div class="input-container">
+                <label class="input-label" for="hex-input">Hex:</label>
+                <input class="hex-input" id="hex-input" type="text" readonly>
+                <label class="input-label" for="decimal-input">Decimal:</label>
+                <input class="decimal-input" id="decimal-input" type="text" readonly>
+            </div>
+        </div>
+        <div class="sensors">
+            <h1>
+                Sensors
+            </h1>
+            <ul id="sensors">
+            </ul>
+        </div>
+    </div>
+    <div class="bottom">
+        <h1>Select a Preset</h1>
+        <div class="presets">
+            <div class="button-container">
+                <button onclick="Toggle()">Toggle</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(1)">Wit</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(2)">Follow</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(3)">Random</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(4)">Firework</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(5)">Bouncing Balls</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(6)">Aurora</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(7)">Belgium</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(8)">Stripe Random</button>
+            </div>
+            <div class="button-container">
+                <button onclick="Preset(9)">Rainbow</button>
+            </div>
+        </div>
+        <script src="./javascript/ledconfig.js"></script>
+    </div>
+</body>
+
 </html>
