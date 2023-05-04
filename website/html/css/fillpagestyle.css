@@ -1,38 +1,36 @@
 ﻿.container {
     position: relative;
-    text-align: center;
-    
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 50%;
+    margin-top: 4%;
+    margin-left: 5%;
 }
 
 img {
-    width: 75%;
+    position: relative;
     height: auto;
-    max-width: 80%;
-    border-radius: 25px;
-    border: 500px solid #1d1f20;
-    border-style: none solid none none;
-    margin-top:5%;
+    object-fit: cover;
+    width: 50%;
+    border-radius: 25px 0 0 25px;
+ 
 }
-.image {
-    flex-basis: 40%
+.blackbox {
+    flex: auto;
+    position: relative;
+    height: auto;
+    background-color: #1d1f20;
+    text-align: center;
+    border-radius: 0px 25px 25px 0px;
 }
-
-.text {
-    padding-left: 2%;
-    position: absolute;
-    bottom: 12%;
-    left: 45%;
-}
-
-
-
 
 #title {
     font-family: 'Agency FB';
-    font-size: 300%;
+    font-size: 350%;
     text-transform: uppercase;
-    margin-top: 35px;
-    margin-bottom: 5px;
+    margin-top: 3%;
+    margin-bottom: 1%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -41,27 +39,12 @@ img {
     color: mediumpurple;
     text-decoration: none;
     font-size: 100%;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 3%;
+    margin-bottom: 1%;
     text-align: center;
     font-family: 'Arial Rounded MT';
 }
 
-
-p {
-    font-family: "Archivo Black", sans-serif;
-    font-weight: normal;
-    font-size: 400%;
-    margin-bottom: 0;
-    margin-bottom: -0.25em;
-    display: block;
-    cursor: pointer;
-    width: 500px;
-    cursor: default;
-    text-align: right;
-    margin-left: auto;
-    margin-right: 100px;
-}
     p.infobubble {
         font-family: "Archivo Black", sans-serif;
         font-weight: normal;
@@ -75,6 +58,7 @@ p {
         margin-left: auto;
         margin-right: 50px;
         color: mediumpurple;
+    
     }
     p.extrabubble {
         font-family: "Archivo Black", sans-serif;
@@ -83,16 +67,19 @@ p {
         text-align: center;
         width: 90%;
     }
-    .gradient-text {
-        background-color: mediumpurple;
-        background-image: linear-gradient( 315deg, mediumpurple 16.666%, #00ffff 33.333%, #00ffff 50%, #0000ff 66.666%, mediumpurple 83.333%, mediumpurple 83.333%);
-        background-size: 100%;
-        background-repeat: repeat;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: rainbow-text-simple-animation-rev 3s ease forwards;
-        margin-right:5%;
-    }
+p.gradient-text {
+    background-color: mediumpurple;
+    background-image: linear-gradient( 315deg, mediumpurple 16.666%, #00ffff 33.333%, #00ffff 50%, #0000ff 66.666%, mediumpurple 83.333%, mediumpurple 83.333%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text-simple-animation-rev 3s ease forwards;
+    margin-right: 5%;
+    font-size: 400%;
+    text-align: right;
+    font-family: "Archivo Black", sans-serif;
+}
 
     .gradient-text:hover {
         animation: rainbow-text-simple-animation 0.5s ease-in forwards;

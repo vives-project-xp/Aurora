@@ -7,15 +7,16 @@ html, body {
     
 }
 
-    .scene {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: #1d1f20;
-        padding: 1rem;
-        text-align: center;
-        padding-top: 1%;
-    }
+.scene {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #1d1f20;
+    padding: 1rem;
+    text-align: center;
+    padding-top: 1%;
+}
+
 
 button {
     position: relative;
@@ -42,8 +43,7 @@ a {
     transition-delay: 0.1s;
     line-height: 0px;
     top: 0.5%;
-    background-color:transparent;
-
+    background-color: transparent;
 }
     a:hover {
         font-size: 120%;
