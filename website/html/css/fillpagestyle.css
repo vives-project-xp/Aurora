@@ -1,34 +1,42 @@
 ﻿.container {
     position: relative;
-    text-align: center;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
+    width: 90%;
+    height: 50%;
+    margin-top: 4%;
+    margin-left: 5%;
 }
 
 img {
-    width: 40%;
+    /* width: 40%;
     height: auto;
     max-width: 40%;
-    /* border-radius: 25px;
+    border-radius: 25px;
     border: 500px solid #1d1f20;
     border-style: none solid none none;
-    */ margin-top: 4%;
+     margin-top: 4%;
+    */
+    flex: auto;
+    height: 100%;
+    border-radius: 25px 0px 0px 25px;
 }
 .image {
-    flex-basis: 40%
+    /* flex-basis: 40%*/
 }
 .blackbox {
     background-color: #1d1f20;
-    flex: 33.33%;
-    width: 50%;
-    height:100%;
-    
+    flex: auto;
+    text-align: center;
+    border-radius: 0px 25px 25px 0px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .text {
-    padding-left: 2%;
-    position: absolute;
-    bottom: 12%;
-    left: 45%;
+    /* padding-left: 2%;
+    */ position: absolute;
+    /*bottom: 12%;
+    left: 45%;*/
 }
 
 
