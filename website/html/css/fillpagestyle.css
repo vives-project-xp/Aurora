@@ -10,10 +10,10 @@
 
 img {
     position: relative;
-    height: 50%;
+    height: auto;
     object-fit: cover;
     width: 50%;
-    border-radius: 25px 0px 0px 25px;
+    border-radius: 25px 0 0 25px;
  
 }
 .blackbox {
@@ -24,15 +24,6 @@ img {
     text-align: center;
     border-radius: 0px 25px 25px 0px;
 }
-/*
-.text {
-    position: relative;
-    margin:5%;
-    font-size: 100%;
-}*/
-
-
-
 
 #title {
     font-family: 'Agency FB';
@@ -54,20 +45,6 @@ img {
     font-family: 'Arial Rounded MT';
 }
 
-
-p {
-    font-family: "Archivo Black", sans-serif;
-    font-weight: normal;
-    font-size: 400%;
-    margin-bottom: 0;
-    margin-bottom: -0.25em;
-    display: block;
-    cursor: pointer;
-    cursor: default;
-    text-align: right;
-    
-
-}
     p.infobubble {
         font-family: "Archivo Black", sans-serif;
         font-weight: normal;
@@ -89,10 +66,8 @@ p {
         font-size: 100%;
         text-align: center;
         width: 90%;
-     
-
     }
-.gradient-text {
+p.gradient-text {
     background-color: mediumpurple;
     background-image: linear-gradient( 315deg, mediumpurple 16.666%, #00ffff 33.333%, #00ffff 50%, #0000ff 66.666%, mediumpurple 83.333%, mediumpurple 83.333%);
     background-size: 100%;
@@ -101,7 +76,9 @@ p {
     -webkit-text-fill-color: transparent;
     animation: rainbow-text-simple-animation-rev 3s ease forwards;
     margin-right: 5%;
-    
+    font-size: 400%;
+    text-align: right;
+    font-family: "Archivo Black", sans-serif;
 }
 
     .gradient-text:hover {
