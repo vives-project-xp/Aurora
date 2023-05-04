@@ -91,8 +91,11 @@ def handle_subscribe(client, userdata, mid, granted_qos):
 def handle_message(client, userdata, msg):
     #print(msg.topic,str(msg.payload.decode()))
     if msg.topic == topic_connect:
-        sender.ConnectSensor(json.loads(str(msg.payload.decode())))
-    elif msg.topic == topic_sensor:
+        msg = json.loads(str(msg.payload.decode()))
+        sender.ConnectSensor(msg)
+        sensor = str(str(msg["id"]).removeprefix("Aurora_sensor"))
+        mqtt.subscribe(topic_sensor + "/" + sensor + "/dist")
+    elif topic_sensor in msg.topic:
         sender.Sensor(json.loads(str(msg.payload.decode())))
 
 @mqtt.on_disconnect()

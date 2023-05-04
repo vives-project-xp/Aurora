@@ -18,8 +18,8 @@ password = 'Aurora_420'
 sensordata = "/data/sensordata.ini"
 connected = False
 config = ConfigParser()
-maxDistance = 150
-minDistance = 30
+maxDistance = 100
+minDistance = 0
 delay = 1
 measurements = []
 threads = []
@@ -152,7 +152,7 @@ class sender:
                     if (int(data["id"])+1) % 2 != 0:
                             self.Measure(sensor)
                 self.sensorId = 0
-        Timer(0.15,self.MeasureTask).start()
+        Timer(0.06,self.MeasureTask).start()
 
     def Measure(self, sensor):
                msg = '{"cmd":"measure","sensor":"' + str(sensor) +'"}'
