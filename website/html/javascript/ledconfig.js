@@ -8,36 +8,36 @@ var hexInput = document.getElementById("hex-input");
 var decimalInput = document.getElementById("decimal-input");
 var colorBox = document.getElementById("color-box");
 
-function Loop(){
-  timeout = setInterval(function() {
+function Loop() {
+  timeout = setInterval(function () {
     Sensors();
   }, 1000);
 }
 
 function updateColor() {
-    var red = redSlider.value;
-    var green = greenSlider.value;
-    var blue = blueSlider.value;
-    var color = "rgb(" + red + "," + green + "," + blue + ")";
-    colorBox.style.backgroundColor = color;
-    redValue.innerText = red;
-    greenValue.innerText = green;
-    blueValue.innerText = blue;
-    hexInput.value = "#" + rgbToHex(red, green, blue);
-    decimalInput.value = rgbToDecimal(red, green, blue);
+  var red = redSlider.value;
+  var green = greenSlider.value;
+  var blue = blueSlider.value;
+  var color = "rgb(" + red + "," + green + "," + blue + ")";
+  colorBox.style.backgroundColor = color;
+  redValue.innerText = red;
+  greenValue.innerText = green;
+  blueValue.innerText = blue;
+  hexInput.value = "#" + rgbToHex(red, green, blue);
+  decimalInput.value = rgbToDecimal(red, green, blue);
 }
 
 function componentToHex(c) {
-    var hex = Number(c).toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
+  var hex = Number(c).toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
 }
 
 function rgbToHex(r, g, b) {
-    return componentToHex(r) + componentToHex(g) + componentToHex(b);
+  return componentToHex(r) + componentToHex(g) + componentToHex(b);
 }
 
 function rgbToDecimal(r, g, b) {
-    return r + ", " + g + ", " + b;
+  return r + ", " + g + ", " + b;
 }
 
 redSlider.addEventListener("input", updateColor);
@@ -45,89 +45,103 @@ greenSlider.addEventListener("input", updateColor);
 blueSlider.addEventListener("input", updateColor);
 
 function init() {
-    updateColor();
+  updateColor();
 }
 redSlider.addEventListener("mousemove", function () {
-    var x = redSlider.value;
-    var color = 'linear-gradient(90deg,red ' + x / 255 * 100 + '%,grey ' + x / 255 * 100 + '%)';
+  var x = redSlider.value;
+  var color =
+    "linear-gradient(90deg,red " +
+    (x / 255) * 100 +
+    "%,grey " +
+    (x / 255) * 100 +
+    "%)";
 
-    redSlider.style.background = color;
-})
+  redSlider.style.background = color;
+});
 
 greenSlider.addEventListener("mousemove", function () {
-    var x = greenSlider.value;
-    var color = 'linear-gradient(90deg,#00ff00 ' + x / 255 * 100 + '%,grey ' + x / 255 * 100 + '%)';
+  var x = greenSlider.value;
+  var color =
+    "linear-gradient(90deg,#00ff00 " +
+    (x / 255) * 100 +
+    "%,grey " +
+    (x / 255) * 100 +
+    "%)";
 
-    greenSlider.style.background = color;
-})
+  greenSlider.style.background = color;
+});
 
 blueSlider.addEventListener("mousemove", function () {
-    var x = blueSlider.value;
-    var color = 'linear-gradient(90deg,blue ' + x / 255 * 100 + '%,grey ' + x / 255 * 100 + '%)';
+  var x = blueSlider.value;
+  var color =
+    "linear-gradient(90deg,blue " +
+    (x / 255) * 100 +
+    "%,grey " +
+    (x / 255) * 100 +
+    "%)";
 
-    blueSlider.style.background = color;
-})
+  blueSlider.style.background = color;
+});
 
 init();
 
-
-
-
-
 function Color() {
-    let data = {
-        red: redSlider.value,
-        green: greenSlider.value,
-        blue: blueSlider.value
-    }
-    Post("color", data);
+  let data = {
+    red: redSlider.value,
+    green: greenSlider.value,
+    blue: blueSlider.value,
+  };
+  Post("color", data);
 }
 
 function Toggle() {
-    Post("toggle", "");
+  Post("toggle", "");
 }
 
 async function Sensors() {
-    sensors = JSON.parse(await Post("sensors"));
+  sensors = JSON.parse(await Post("sensors"));
 
-    //clearing sensor list
-    //document.getElementById("sensors").textContent = "";
-    if(sensors){
-      for(sensor of sensors){
-        AddSensor(sensor)
-      }
+  //clearing sensor list
+  //document.getElementById("sensors").textContent = "";
+  if (sensors) {
+    for (sensor of sensors) {
+      AddSensor(sensor);
     }
+  }
 }
 
 function AddSensor(sensor) {
-    const sensors = document.getElementById("sensors");
-    if (sensors.querySelector("#" + sensor["name"]) == null) {
-        const node = document.createElement('li');
-        const name = document.createElement("p");
-        name.innerHTML = sensor["name"];
-        name.setAttribute("id", sensor["name"]);
-        const id = document.createElement("input");
-        id.setAttribute("type", "text");
-        id.setAttribute("value", sensor["id"]);
-        id.setAttribute("onchange", 'UpdateSensor("' + sensor["name"] + '",this.value)');
-        const time = document.createTextNode(sensor["lastseen"]);
-        node.appendChild(name);
-        node.appendChild(id);
-        node.appendChild(time);
+  const sensors = document.getElementById("sensors");
+  if (sensors.querySelector("#" + sensor["name"]) == null) {
+    const node = document.createElement("li");
+    const name = document.createElement("p");
+    name.innerHTML = sensor["name"];
+    name.setAttribute("id", sensor["name"]);
+    const id = document.createElement("input");
+    id.setAttribute("type", "text");
+    id.setAttribute("value", sensor["id"]);
+    id.setAttribute(
+      "onchange",
+      'UpdateSensor("' + sensor["name"] + '",this.value)'
+    );
+    //const time = document.createElement("p");
+    //time.innerHTML = sensor["lastseen"];
+    node.appendChild(name);
+    node.appendChild(id);
+    //node.appendChild(time);
 
-        document.getElementById("sensors").appendChild(node);
-    }
+    document.getElementById("sensors").appendChild(node);
+  }
 }
 
 function UpdateSensor(name, id) {
-    console.log("update " + name + " to " + id);
-    let data = {
-        name: name,
-        id: id
-    }
-    Post("updatesensor", data);
+  console.log("update " + name + " to " + id);
+  let data = {
+    name: name,
+    id: id,
+  };
+  Post("updatesensor", data);
 }
-
 
 /*Form()
 
@@ -148,25 +162,20 @@ test test
 	
 }*/
 
-function Preset() {
-    let data = { ps: document.getElementById("preset").value }
-    Post("preset", data)
+function Preset(value) {
+  let data = { ps: value };
+  Post("preset", data);
 }
 
 async function Post(page, data) {
-    //fetch("http://" + document.getElementById("api").value + "/" + page, {
-    let response = await fetch("http://10.11.0.2:5500/" + page, {
-        method: 'post',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-    msg = await response.text();
-    return msg;
+  //fetch("http://" + document.getElementById("api").value + "/" + page, {
+  let response = await fetch("http://10.11.0.2:5500/" + page, {
+    method: "post",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  msg = await response.text();
+  return msg;
 }
-
-
-
-
-
