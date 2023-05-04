@@ -28,12 +28,12 @@ button {
     text-decoration: none;
     border: none;
     cursor: pointer;
-    font-size: 125%;
-    top: -0.3%;
+    font-size: 1.8vw;
+    
 }
 a {
     position: relative;
-    font-size: 110%;
+    font-size: 1.5vw;
     text-transform: uppercase;
     z-index: 10;
     text-decoration: none;
@@ -42,13 +42,11 @@ a {
     -webkit-transition: 0.5s;
     transition-delay: 0.1s;
     line-height: 0px;
-    top: 0.5%;
+    top: 0.5vw;
     background-color: transparent;
 }
     a:hover {
-        font-size: 120%;
-        background-color: transparent;
-       
+        font-size: 1.7vw;
     }
 
 .magic {
@@ -68,8 +66,8 @@ a {
 .scene:hover .magic {
     z-index: 5;
     position: absolute;
-    width: 15rem;
-    height: 15rem;
+    width: 16vw;
+    height: 16vw;
     background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
     background-size: cover;
     background-position: center;
@@ -79,7 +77,5 @@ a {
     left: calc(50%-10rem);
 }
 
-
-/*ledstrip css*/
 
 

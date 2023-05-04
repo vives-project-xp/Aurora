@@ -26,7 +26,7 @@
     margin-bottom: 20px;
     width: calc(30% - 20px);
     background-color: white;
-    background-image: linear-gradient( 315deg, mediumpurple 20%, #00ffff 50%, #ccffff 75%, white 83.333%, white 100%);
+    background-image: linear-gradient( 315deg, mediumpurple 20%, #00ffff 50%, #00e6e6 75%, #ccffff 100%);
     background-size: 100%;
     background-repeat: repeat;
     animation: rainbow-text-simple-animation-rev 1.5s ease forwards;
