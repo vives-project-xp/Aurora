@@ -143,27 +143,10 @@ function UpdateSensor(name, id) {
   Post("updatesensor", data);
 }
 
-/*Form()
 
-test test
-{
-    
-        const form = document.getElementById("preset-form");
-        form.addEventListener("submit", function(event) {
-            event.preventDefault(); 
-      // Prevent the form from submitting and refreshing the page
-
-            const input = document.getElementById("preset-input");
-            const preset = input.value;
-            console.log("You gave a preset: " + preset);
-
-            // You can now use the value of `preset` to do whatever you need to do, such as sending it to a server or updating the UI
-        });
-	
-}*/
-
-function Preset(value) {
-  let data = { ps: value };
+function Preset(val) {
+  console.log("preset: " + val)
+  let data = { ps: val };
   Post("preset", data);
 }
 

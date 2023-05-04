@@ -80,9 +80,8 @@ class sender:
         self.publish(topic_wled + "/api", msg)
 
     def SetPreset(self, data):
-        print("setpreset")
         ps = data["ps"]
-        msg = '{"ps":' +ps +'}'
+        msg = '{"ps":' +str(ps) +'}'
         self.publish(topic_wled + "/api", msg)
 
     def publish(self, topic, msg):
