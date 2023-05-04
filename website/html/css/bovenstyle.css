@@ -66,8 +66,8 @@ a {
 .scene:hover .magic {
     z-index: 5;
     position: absolute;
-    width: 15rem;
-    height: 15rem;
+    width: 16vw;
+    height: 16vw;
     background: url('https://wallpaper.dog/large/20430652.jpg') 50% 50% no-repeat fixed;
     background-size: cover;
     background-position: center;
@@ -77,7 +77,5 @@ a {
     left: calc(50%-10rem);
 }
 
-
-/*ledstrip css*/
 
 
