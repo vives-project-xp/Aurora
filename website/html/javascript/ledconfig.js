@@ -143,8 +143,8 @@ function UpdateSensor(name, id) {
   Post("updatesensor", data);
 }
 
-/*Form()
 
+<<<<<<< HEAD
 test test
 {
     
@@ -163,6 +163,10 @@ test test
 }*/
 
 function Preset(val) {
+=======
+function Preset(val) {
+  console.log("preset: " + val)
+>>>>>>> 24eb8c3158b06054afb657cb77b36b77e50157a5
   let data = { ps: val };
   Post("preset", data);
 }

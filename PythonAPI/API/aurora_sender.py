@@ -18,7 +18,8 @@ password = 'Aurora_420'
 sensordata = "/data/sensordata.ini"
 connected = False
 config = ConfigParser()
-minDistance = 200
+maxDistance = 100
+minDistance = 0
 delay = 1
 measurements = []
 threads = []
@@ -32,7 +33,7 @@ class sender:
             if rc == 0:
                 print("Aurora sender: Connected to MQTT Broker!")
                 self.connected = True
-                #self.MeasureTask()
+                self.MeasureTask()
             else:
                 print("Failed to connect, return code %d\n", rc)
 
@@ -79,9 +80,8 @@ class sender:
         self.publish(topic_wled + "/api", msg)
 
     def SetPreset(self, data):
-        print("setpreset")
         ps = data["ps"]
-        msg = '{"ps":' +ps +'}'
+        msg = '{"ps":' +str(ps) +'}'
         self.publish(topic_wled + "/api", msg)
 
     def publish(self, topic, msg):
@@ -103,7 +103,7 @@ class sender:
          config.set("sensors", str(id), str(data).replace("'", '"'))
          self.SaveConfig()
          #print(id, distance)
-         if(distance >= minDistance or distance < 0):
+         if(distance >= maxDistance or distance < minDistance):
             if(id in measurements):
                 measurements.remove(id)
                 print("removed", id)
@@ -151,11 +151,11 @@ class sender:
                     if (int(data["id"])+1) % 2 != 0:
                             self.Measure(sensor)
                 self.sensorId = 0
-        Timer(0.05,self.MeasureTask).start()
+        Timer(0.06,self.MeasureTask).start()
 
     def Measure(self, sensor):
                msg = '{"cmd":"measure","sensor":"' + str(sensor) +'"}'
-               self.publish(topic_sensor + "/measure", msg)    
+               self.publish(topic_sensor + "/" + sensor + "/measure", msg)    
         
     def ConnectSensor(self, msg):
          config.read(sensordata)
@@ -175,7 +175,7 @@ class sender:
             config.set("data", "sensorcount", str(count + 1))
             print("added new sensor:", sensor, "with id:" , count)
          self.SaveConfig()
-         self.publish(topic_sensor + "/connected", '{"cmd":"connected","sensor":"' + str(sensor) +'"}')
+         self.publish(topic_sensor + "/" + sensor +"/connected", '{"cmd":"connected","sensor":"' + str(sensor) +'"}')
 
     def SaveConfig(self):
          with open(sensordata, 'w') as conf:
