@@ -1,9 +1,9 @@
 # Aurora
-Our inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips <br /> 
+
+Our inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips <br />
 We Also will try to develop a person detection system with sensors
 
 <img src="Documenten/images/Readme/Aurora%204k.jpg" alt="Aurora" width="700" height="300">
-
 
 ## Table of contents
 
@@ -27,28 +27,28 @@ This is an interactive LED strip that tracks people and also can display random 
 
 These are the required software and hardware
 
- ### Software
- 
- - Wled
- - Arduino
- - HTML
- - Python
- - Javascript
- - Docker
- 
- ### Hardware
+### Software
 
- - ESP32
- - WS2812B led strip
- - kabel goot 
- - 2,5 carre kabels
- - breadboard
- - Voeding
- - ultrasone sensor
- - 3d printed brackets
- - 3d printed joints
+- Wled
+- Arduino
+- HTML
+- Python
+- Javascript
+- Docker
 
- > You can find extra information to buy the right components [here](./HARDWARE.md).
+### Hardware
+
+- ESP32
+- WS2812B led strip
+- kabel goot
+- 2,5 carre kabels
+- breadboard
+- Voeding
+- ultrasone sensor
+- 3d printed brackets
+- 3d printed joints
+
+> You can find extra information to buy the right components [here](./HARDWARE.md).
 
 ## Installation
 
@@ -61,24 +61,25 @@ No configuration yet
 ## Troubleshooting
 
 Problems
+
 1. Sensors kunnen niet ver genoeg meten
 2. Voltage drop op ledstrip
-3. communicatie tussen sensoren  
-4. Hoe ledstrip omhoog houden 
+3. communicatie tussen sensoren
+4. Hoe ledstrip omhoog houden
 
 ## FAQ
 
 no questions yet
 
 ## Maintainers
-Made by  Glenn Coopman, Aitor Vannevel, thibaut schroyens, Thomas Oddery and Robbe Verhelst
+
+Made by Aitor Vannevel, thibaut schroyens, Thomas Oddery and Robbe Verhelst
 
 ## project Idea
+
 a bridge over the minnewater in 2019 </br>
 </br>
 <img src="Documenten/images/Readme/bridge%20lights%20V2.jpg" alt="a bridge over the minnewater in 2019" width="600" height="300">
-
-
 
 ## mood images
 

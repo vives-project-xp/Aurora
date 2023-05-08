@@ -19,7 +19,7 @@ namespace Sensors {
     
         unsigned long duration_us = pulseIn(_echoPin, HIGH);      // Can take in timeout, should we add one?
         int distance_cm = (0.0172 * duration_us);
-
+        Serial.println(distance_cm);
         if (distance_cm <= 300 && distance_cm > 0) return distance_cm;
         else return -1;
       }

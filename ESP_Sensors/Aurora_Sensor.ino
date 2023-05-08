@@ -5,6 +5,7 @@
 #include "hc_sr04.h"
 #include "config.h"
 
+
 using namespace Sonic;
 
 #define FIRMWARE_VERSION "v0.1"
@@ -24,6 +25,8 @@ String mqttClientId = "";
 #define RGB_COUNT     1
 #define RGB_PIN       8
 #define RGB_CHANNEL   0
+String prefix = "Aurora_sensor";
+bool isConnected = false;
 
 Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(RGB_COUNT, RGB_PIN, RGB_CHANNEL, TYPE_GRB);
 
@@ -31,6 +34,12 @@ void status_no_communications(void) {
   strip.setLedColorData(0,255,0,0);
   strip.show();
 }
+
+void status_wifi_ok(void) {
+  strip.setLedColorData(0, 255, 127, 0);
+  strip.show();
+}
+
 void status_communications_ok(void) {
   strip.setLedColorData(0, 0, 255, 0);
   strip.show();
@@ -56,7 +65,7 @@ String get_client_id(void) {
   String mqttClientId = WiFi.macAddress().substring(9);
   mqttClientId.replace(":", "");
   mqttClientId.toLowerCase();
-  mqttClientId = "esp32-sonic-" + mqttClientId;    // + String(randomId);
+  mqttClientId = prefix + mqttClientId;    // + String(randomId);
   return mqttClientId;
 }
 
@@ -75,19 +84,20 @@ bool connect_to_mqtt_broker(void) {
 }
 
 void publish_ultrasonic_distance(int distance) {
-  String commandTopic = Config::MQTT_BASE_TOPIC + "/measurements";
+  String commandTopic = Config::MQTT_BASE_TOPIC;
 
   char output[128];
   StaticJsonDocument<128> message;
 
   message["id"] = get_client_id();
-  message["unit"] = "cm";
   message["distance"] = distance;
 
   serializeJson(message, output);
 
-  Serial.println("Publishing measurement message");
-  mqttClient.publish(commandTopic.c_str(), output);
+  Serial.print("Publishing measurement message ");
+  Serial.println(distance);
+  String topic = commandTopic + '/' + get_client_id().substring(prefix.length()) + "/dist";
+  mqttClient.publish(topic.c_str(), output);
 }
 
 void mqtt_subscribe_callback(char *topic, byte *payload, unsigned int length) {
@@ -109,26 +119,51 @@ void mqtt_subscribe_callback(char *topic, byte *payload, unsigned int length) {
   deserializeJson(doc, message);
 
   const char* command = doc["cmd"];
-
-  if (!strcmp(command, "measure")) {
-    int distance = ultrasonicSensor.measure_distance_cm();
-    if (distance >= 0) {
-      publish_ultrasonic_distance(distance);
+  const char* sensor = doc["sensor"];
+  const int count = 1;
+  if(String(sensor) == get_client_id().substring(prefix.length())){
+    isConnected = true;
+    if (!strcmp(doc["cmd"], "measure")) {
+      byte distance[count];
+      for(byte i = 0; i <count ;i++){
+       //distance[i] = ultrasonicSensor.measure_distance_cm();
+       distance[i] = measure_distance_cm_new();
+        //delayMicroseconds(30);
+      }
+      
+      int dist = distance[0];
+      for(int i = 0; i < count;i++){
+        if(distance[i] > dist){
+          dist = distance[i];
+        }
+      }
+       publish_ultrasonic_distance(dist);
     }
-  } else {
-    Serial.println("Unknown command");
   }
 }
 
+int measure_distance_cm_new(){
+    digitalWrite(TRIGGER_PIN, LOW);
+  delayMicroseconds(2);
+  // Sets the trigPin on HIGH state for 10 micro seconds
+  digitalWrite(TRIGGER_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIGGER_PIN, LOW);
+  // Reads the echoPin, returns the sound wave travel time in microseconds
+  long duration = pulseIn(ECHO_PIN, HIGH);
+  // Calculating the distance
+  int distance = duration * 0.0171;
+  // Prints the distance on the Serial Monitor
+  return distance;
+}
+
 void publish_hello_package(void) {
-  String helloTopic = Config::MQTT_BASE_TOPIC + "/hello";
+  String helloTopic = Config::MQTT_BASE_TOPIC + "/connect";
 
   char output[128];
   StaticJsonDocument<128> message;
 
-  message["ip"] = WiFi.localIP();
   message["id"] = get_client_id();
-  message["version"] = FIRMWARE_VERSION;
 
   serializeJson(message, output);
 
@@ -140,9 +175,10 @@ void setup_mqtt_subscriptions(void) {
   mqttClient.setCallback(mqtt_subscribe_callback);
 
   String clientId = get_client_id();
-  String commandTopic = Config::MQTT_BASE_TOPIC + "/" + clientId + "/commands";
+  String commandTopic = Config::MQTT_BASE_TOPIC + "/" + clientId.substring(prefix.length()) + "/measure";
 
   mqttClient.subscribe(commandTopic.c_str());
+  mqttClient.subscribe((Config::MQTT_BASE_TOPIC + "/" + clientId.substring(prefix.length())+ "/connected").c_str());
 }
 
 void setup() {
@@ -166,28 +202,36 @@ void setup() {
   Serial.println("Starting firmware of ESP32-C3 Sonic Module ...");
   Serial.print("MAC Address: ");
   Serial.println(WiFi.macAddress());
+  
 
   connect_to_wifi();
   connect_to_mqtt_broker();
   setup_mqtt_subscriptions();
-
-  publish_hello_package();
 }
 
 void loop() {
   // Needs cleanup but for the moment ok
   if (WiFi.status() != WL_CONNECTED) {
+    isConnected = false;
     status_no_communications();
     connect_to_wifi();
+    delay(1000);
   }
   if (WiFi.status() == WL_CONNECTED && !mqttClient.connected()) {
-    status_no_communications();
+    isConnected = false;
+    status_wifi_ok();
     connect_to_mqtt_broker();
+    delay(1000);
   }
   if (WiFi.status() == WL_CONNECTED && mqttClient.connected()) {
-    status_communications_ok();
+    setup_mqtt_subscriptions();
+    if(!isConnected){
+      publish_hello_package();
+      delay(2000);
+    }else{
+          status_communications_ok();
+    }
   }
-
   // Give client processing time
   mqttClient.loop();
 }

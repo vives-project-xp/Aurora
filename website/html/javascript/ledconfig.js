@@ -162,8 +162,8 @@ test test
 	
 }*/
 
-function Preset(value) {
-  let data = { ps: value };
+function Preset(val) {
+  let data = { ps: val };
   Post("preset", data);
 }
 
