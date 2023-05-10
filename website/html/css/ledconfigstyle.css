@@ -7,10 +7,10 @@
   justify-content: center;
   margin: auto;
   width: 50%;
-  background-image: url("../images/Ledconfig_Background.jpg");
+  /*background-image: url("../images/Ledconfig_Background.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
-  color: white;
+  background-size: 100%;*/
+  color: black;
 }
 
 body div {
@@ -189,7 +189,7 @@ button:hover {
 }
 
 label {
-  color: #fff;
+  color: black;
   font-size: 18px;
 }
 
