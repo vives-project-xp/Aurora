@@ -1,5 +1,5 @@
 // Set the interval duration (in milliseconds)
-var intervalDuration = 1000; // 3 seconds
+var intervalDuration = 5000; // 5 seconds
 
 // Get all the slide elements
 var slides = document.querySelectorAll('.ci');
@@ -9,19 +9,19 @@ function showNextSlide() {
     // Find the currently active slide
     var activeSlide = document.querySelector('.ci.active');
 
-    // Find the next slide
-    var nextSlide = activeSlide.nextElementSibling;
-    if (!nextSlide) {
-        // If there is no next slide, go back to the first slide
-        nextSlide = slides[0];
-    }
+    // Find the index of the active slide
+    var activeIndex = Array.from(slides).indexOf(activeSlide);
+
+    // Calculate the index of the next slide
+    var nextIndex = (activeIndex + 1) % slides.length;
 
     // Remove the active class from the current slide
     activeSlide.classList.remove('active');
 
     // Add the active class to the next slide
-    nextSlide.classList.add('active');
+    slides[nextIndex].classList.add('active');
 }
 
 // Start the slideshow
 setInterval(showNextSlide, intervalDuration);
+
