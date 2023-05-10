@@ -90,6 +90,7 @@ A bridge over the minnewater in 2019 </br>
 
 ## mood images
 
+<img src="Documenten/images/Readme/Rainbow.jpeg" alt="Rainbow" width="400" >
 <img src="Documenten/images/Readme/mood%20images%201.jpg" alt="mood image 1" width="400" >
 <img src="Documenten/images/Readme/neopixel.jpg" alt="mood image 1" width="400" height = "200" ></br>
 <img src="Documenten/images/Readme/first%20demo.jpg" alt="mood image 1" width="400" >
