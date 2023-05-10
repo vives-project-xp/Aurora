@@ -56,7 +56,7 @@ These are the required software and hardware
 
 ## Configuration
 
-[CONFIGURATION](./Documenten/images/LedConfig.mp4)
+<img src="Documenten/images/Readme/Ledconfig.png" alt="LedConfig">
 
 ## Troubleshooting
 
