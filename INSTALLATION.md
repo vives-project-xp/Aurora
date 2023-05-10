@@ -25,6 +25,7 @@ Insert the sd-card into the Pi and boot it up.
 Once booted up. Login using [SSH](https://tutorials-raspberrypi.com/raspberry-pi-remote-access-by-using-ssh-and-putty/). The hostname should be **aurora.local** and use your username and password.
 
 Run the following commands:
+
 ```
 sudo apt-get update
 sudo apt-get upgrade
@@ -32,6 +33,7 @@ sudo reboot
 ```
 
 ### Install git:
+
 ```
 sudo apt install git
 git config --global user.name "Your Name"
@@ -39,6 +41,7 @@ git config --global user.email "youremail@yourdomain.com"
 ```
 
 Once you have git installed, you can clone our project to the Raspberry Pi.
+
 ```
 git clone https://github.com/vives-project-xp/Aurora.git
 ```
@@ -46,6 +49,7 @@ git clone https://github.com/vives-project-xp/Aurora.git
 ### Install Docker:
 
 Give the user permission to use docker.
+
 ```
 sudo groupadd docker
 sudo usermod -aG docker $USER
@@ -53,14 +57,16 @@ sudo reboot
 ```
 
 Install Docker
+
 ```
 curl -sSL https://get.docker.com | sh
 ```
 
 Once docker is installed, you can start our project.
+
 ```
 docker compose up -d --build
 ```
 
 It can take a while until everything has downloaden
-If everything works as it should, you can search for [aurora.local](http://aurora.local/) 
+If everything works as it should, you can search for [aurora.local](http://aurora.local/)
