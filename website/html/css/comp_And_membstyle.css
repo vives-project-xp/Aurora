@@ -152,3 +152,14 @@ input:not(:checked) + label + .ci {
         display: inline-block;
         margin-left: 6px;
     }
+
+.ci.active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: .3s ease-out;
+}
+
+/* Remove the transition for inactive slides */
+input:not(:checked) + label + .ci {
+    transition: 0;
+}
