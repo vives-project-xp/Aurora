@@ -1,112 +1,154 @@
 
-  /* members CSS*/
-
-.Personen {
-    background-color: #d9d9d9;
-    height: 100vh;
-}
-.containeremployee {
+body {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    max-width: 1000px;
-    margin: auto;
-    padding: 10px;
- 
-}
-
-.employee {
-    /* background-color: #f9f9f9;
-    */
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    margin-bottom: 20px;
-    width: calc(30% - 20px);
-    background-color: white;
-    background-image: linear-gradient( 315deg, mediumpurple 20%, #00ffff 50%, #00e6e6 75%, #ccffff 100%);
-    background-size: 100%;
-    background-repeat: repeat;
-    animation: rainbow-text-simple-animation-rev 1.5s ease forwards;
-}
-.employee:hover {
-    animation: rainbow-text-simple-animation 0.5s ease-in forwards;
-}
-
-@keyframes rainbow-text-simple-animation-rev {
-    0% {
-        background-size: 650%;
-    }
-
-    40% {
-        background-size: 650%;
-    }
-
-    100% {
-        background-size: 100%;
-    }
-}
-
-@keyframes rainbow-text-simple-animation {
-    0% {
-        background-size: 100%;
-    }
-
-    80% {
-        background-size: 650%;
-    }
-
-    100% {
-        background-size: 650%;
-    }
-}
-
-
-
-
-
-
-  .employee img {
-    display: block;
-    margin: auto;
-    border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-    object-position: center;
-    margin-bottom: 10px;
-  }
-  
-  .employee h2 {
+    min-height: 20vw;
     margin: 0;
-    font-size: 21px;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-.employee p {
-    margin: 0;
-    font-size: 16px;
-    text-align: center;
-    color: #404040;
-    margin-bottom: 10px;
+    background: hsl(0 0% 98%);
+    font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+    background-color: #d9d9d9;
 }
-  @media screen and (max-width: 820px) {
-    .containeremployee {
-      flex-direction: column;
+.title {
+    font-size: 3vw;
+    color: mediumpurple;
+    font-family: 'Agency FB';
+}
+.infotitle{
+    color: white;
+    font-size: 1.5vw;
+}
+h1 {
+    color: hsla(32 50% 50% / .8);
+    position: fixed;
+    left: -100px;
+    top: 50%;
+    margin: 0;
+    transform: rotate(-90deg) translateY(-50%);
+}
+
+
+.c {
+   
+    width: 60vw;
+    height: 30vw;
+    border-radius: 25px;
+    margin: 6vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: hsl(0 0% 90%);
+    box-sizing: border-box;
+}
+
+.ci {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    transform-origin: left 50%;
+    background: inherit;
+    z-index: var(--z);
+    transition: .3s ease-out;
+    display: flex;
+    flex-direction: row;
+}
+
+    .ci img {
+        -moz-user-select: none;
+        user-select: none;
+        background-position: center;
+        background-repeat: no-repeat;
+       
     }
-    
-    .employee {
-      width: calc(90% - 20px);
+.gray {
+    flex: auto;
+    position: relative;
+    height: auto;
+    background-color: #1d1f20;
+    text-align: center;
+    width: 20vw;
+}
+.ch {
+    position: absolute;
+    top: 70%;
+    left: 4%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: hsla(var(--h) var(--s) var(--l) / .8);
+    text-shadow: 0 2px 10px hsla(var(--h) var(--s) 10% / .3);
+}
+
+input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    z-index: -10;
+}
+
+label {
+    margin-bottom:1vw;
+    width: 10%;
+    height: 1vw;
+    margin-right: 1vw;
+    border-radius: 2vw;
+    background: hsla(0 0% 90% / .3);
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+    label:last-child {
+        margin-right: 0;
     }
-    .Personen
-    {
-      height: 100%;
+
+input:checked + label {
+    background: mediumpurple;
+}
+
+input:not(:checked) + label + .ci {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+input:checked + label + .ci ~ .ci {
+    transform: translateX(100%);
+}
+
+input:not(:checked) + label + .ci {
+    transition: 0;
+}
+
+.abs-site-link {
+    position: fixed;
+    z-index: 11;
+    bottom: 20px;
+    left: 20px;
+    color: hsla(32 50% 50% / .8);
+    font-size: 1.6rem;
+    font-weight: bold;
+    border-bottom: 3px solid currentColor;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+.abs-profiles {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 23px;
+    opacity: .8;
+}
+
+    .abs-profiles img {
+        filter: hue-rotate(71deg) brightness(1.1);
     }
-  }
-  
-  
-  
-  
+
+    .abs-profiles a {
+        display: inline-block;
+        margin-left: 6px;
+    }

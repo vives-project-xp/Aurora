@@ -48,7 +48,7 @@ a {
     a:hover {
         font-size: 120%;
         background-color: transparent;
-       
+        border: 2vw solid black;
     }
 
 .magic {
