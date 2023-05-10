@@ -69,7 +69,10 @@ Problems
 
 ## FAQ
 
-No questions yet
+- How can you add new sensors?
+  > Just upload the program on your esp and connect to a WiFi network.
+  > The ESP will automatically connect to the server.
+-
 
 ## Maintainers
 
