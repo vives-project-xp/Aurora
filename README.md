@@ -58,9 +58,9 @@ These are the required software and hardware
 
 <img src="Documenten/images/Readme/Ledconfig.png" alt="LedConfig">
 
--You can change the color of the ledstrip by dragging the sliders to the correct color.
--To change the order of the sensors, simply change the number under the sensor.
--You can select a preset by clicking on the desired button.
+- You can change the color of the ledstrip by dragging the sliders to the correct color.
+- To change the order of the sensors, simply change the number under the sensor.
+- You can select a preset by clicking on the desired button.
 
 ## Troubleshooting
 
