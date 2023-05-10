@@ -25,15 +25,15 @@ ESP32 Devkit V1 Board met WiFi Bluetooth en Dual Core processor
 
 Een plastieken kabelgoot van 2,3 cm hoog en 4,3 cm breed.
 
-<img src="Documenten/images/Readme/Hanger.jpg" alt="KabelGoot">
+<img src="Documenten/images/Readme/Hanger.jpg" alt="KabelGoot" width="400">
 
 ## 3D prints
 
 3D prints voor de kapelgoot omhoog te houden en cases voor de sensors.
 
-<img src="Documenten/images/Readme/Sensor_Old.jpg" alt="Sensor Old">
-<img src="Documenten/images/Readme/Sensor_New.jpg" alt="Sensor New">
-<img src="Documenten/images/AURORA_MASCOT.jpg" alt="AURORA_MASCOT">
+<img src="Documenten/images/Readme/Sensor_Old.jpg" alt="Sensor Old" width="400">
+<img src="Documenten/images/Readme/Sensor_New.jpg" alt="Sensor New" width="400">
+<img src="Documenten/images/AURORA_MASCOT.jpg" alt="AURORA_MASCOT" width="400">
 
 ## Voeding
 
