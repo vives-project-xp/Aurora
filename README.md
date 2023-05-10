@@ -64,20 +64,20 @@ Problems
 
 1. Sensors kunnen niet ver genoeg meten
 2. Voltage drop op ledstrip
-3. communicatie tussen sensoren
+3. Communicatie tussen sensoren
 4. Hoe ledstrip omhoog houden
 
 ## FAQ
 
-no questions yet
+No questions yet
 
 ## Maintainers
 
-Made by Aitor Vannevel, thibaut schroyens, Thomas Oddery and Robbe Verhelst
+Made by Aitor Vannevel, Thibaut Schroyens, Thomas Oddery and Robbe Verhelst
 
 ## project Idea
 
-a bridge over the minnewater in 2019 </br>
+A bridge over the minnewater in 2019 </br>
 </br>
 <img src="Documenten/images/Readme/bridge%20lights%20V2.jpg" alt="a bridge over the minnewater in 2019" width="600" height="300">
 

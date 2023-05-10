@@ -6,7 +6,13 @@
   background-color: #d9d9d9;
   justify-content: center;
   margin: auto;
+  width: 50%;
+  background-image: url("../images/Ledconfig_Background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
 }
+
 body div {
   margin: 0 auto;
 }
@@ -18,7 +24,7 @@ body div {
 
 .bottom {
   text-align: center;
-  width: 75%;
+  width: 100%;
 }
 
 .colorpicker {
@@ -30,6 +36,7 @@ body div {
 .presets {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 30px;
 }
@@ -52,7 +59,6 @@ h1 {
 
 .slider-label {
   margin-bottom: 10px;
-  color: black;
   font-family: "Agency FB";
 }
 
@@ -107,7 +113,8 @@ h1 {
 .value-label {
   font-size: 20px;
   margin-bottom: 10px;
-  color: white;
+  color: mediumpurple;
+  font-weight: bold;
 }
 
 .color-box {
@@ -128,7 +135,6 @@ h1 {
 .input-label {
   margin-top: 5px;
   margin-right: 10px;
-  color: black;
   font-family: "Agency FB";
 }
 
@@ -160,7 +166,7 @@ h1 {
 }
 
 .button-container {
-  width: 100%;
+  width: 7vw;
   height: 5vw;
   text-align: center;
   margin: 10px;
