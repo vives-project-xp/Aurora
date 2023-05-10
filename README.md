@@ -7,16 +7,16 @@ We Also will try to develop a person detection system with sensors
 
 ## Table of contents
 
-- Short discription
-- Required
-  - Hardware
-  - Software
-- Installation
-- Configuration
-- Troubleshooting
-- FAQ
-- Maintainers
-- project photos
+- [Short discription](#short-discription)
+- [Required](#required)
+  - [Hardware](#hardware)
+  - [Software](#software)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Troubleshooting](#troubleshooting)
+- [FAQ](#faq)
+- [Maintainers](#maintainers)
+- [project photos](#mood-images)
 
 ## Short Discription
 
