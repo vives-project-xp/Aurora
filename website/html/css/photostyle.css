@@ -1,0 +1,25 @@
+﻿.gallery {
+    position: relative;
+    flex-direction: row;
+    width: 90%;
+    margin-top: 4%;
+    display: grid;
+    grid-template-columns: 35% 35%;
+    background-color: green;
+    text-align: center;
+}
+body{
+ text-align: center;
+}
+.picture {
+ text-align:center;
+  
+}
+img{
+    width: 100%;
+   
+}
+.blackbox {
+   background-color: gray;
+    
+}
