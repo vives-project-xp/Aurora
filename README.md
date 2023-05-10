@@ -1,6 +1,6 @@
 # Aurora
 
-Our inspiration for this project is the northern lights in Norway. This we want to recreate using ledstrips <br />
+Our inspiration for this project is the northern lights in Norway. This is what we want to recreate using ledstrips <br />
 We Also will try to develop a person detection system with sensors
 
 <img src="Documenten/images/Readme/Aurora%204k.jpg" alt="Aurora" width="700" height="300">
@@ -39,7 +39,7 @@ These are the required software and hardware
 ### Hardware
 
 - ESP32
-- WS2812B led strip
+- TM1814 led strip
 - kabel goot
 - 2,5 carre kabels
 - breadboard
@@ -66,7 +66,7 @@ These are the required software and hardware
 
 Problems
 
-1. Sensors kunnen niet ver genoeg meten
+1. Sensors kunnen niet accuraat meten op grotere afstanden
 2. Voltage drop op ledstrip
 3. Communicatie tussen sensoren
 4. Hoe ledstrip omhoog houden
