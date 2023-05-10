@@ -1,0 +1,10 @@
+﻿body
+{
+    overflow: hidden;
+    background-color: black;
+    text-align: center;
+}
+iframe{
+    width: 90vw;
+    height: 44vw;
+}
