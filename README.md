@@ -56,7 +56,7 @@ These are the required software and hardware
 
 ## Configuration
 
-<img src="Documenten/images/Readme/Ledconfig.png" alt="LedConfig" width="400">
+<img src="Documenten/images/Readme/Ledconfig.png" alt="LedConfig" width="600">
 
 - You can change the color of the ledstrip by dragging the sliders to the correct color.
 - To change the order of the sensors, simply change the number under the sensor.
