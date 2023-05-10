@@ -20,7 +20,6 @@ html, body {
 
 button {
     position: relative;
-    font-size: 4%;
     text-transform: uppercase;
     color: mediumpurple;
     background-color: transparent;
@@ -29,7 +28,7 @@ button {
     border: none;
     cursor: pointer;
     font-size: 1.8vw;
-    
+    top: -0.3vw;
 }
 a {
     position: relative;
@@ -42,7 +41,7 @@ a {
     -webkit-transition: 0.5s;
     transition-delay: 0.1s;
     line-height: 0px;
-    top: 0.5vw;
+    top: 0.1vw;
     background-color: transparent;
 }
     a:hover {
