@@ -66,10 +66,10 @@ These are the required software and hardware
 
 Problems
 
-1. Sensors kunnen niet accuraat meten op grotere afstanden
-2. Voltage drop op ledstrip
-3. Communicatie tussen sensoren
-4. Hoe ledstrip omhoog houden
+1. Sensors cannot measure accurately at greater distances
+2. Voltage drop on led strip
+3. Communication between sensors
+4. How to hold up led strip
 
 ## FAQ
 
@@ -93,5 +93,9 @@ A bridge over the minnewater in 2019 </br>
 <img src="Documenten/images/Readme/Rainbow.jpeg" alt="Rainbow" width="400" >
 <img src="Documenten/images/Readme/mood%20images%201.jpg" alt="mood image 1" width="400" >
 <img src="Documenten/images/Readme/neopixel.jpg" alt="mood image 1" width="400" height = "200" ></br>
+
+## Link to video and powerpoint
+
+https://vivesonline-my.sharepoint.com/:f:/g/personal/r0937303_student_vives_be/EpYM_1HZu6NDgFsA1ULMHWIBT6pIUGCs6AUFglGCNppjEg?e=jZTypN
 <img src="Documenten/images/Readme/first%20demo.jpg" alt="mood image 1" width="400" >
 <img src="Documenten/images/Readme/kabelGoot.jpg" alt="mood image 1" width="250" >
