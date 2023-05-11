@@ -93,5 +93,9 @@ A bridge over the minnewater in 2019 </br>
 <img src="Documenten/images/Readme/Rainbow.jpeg" alt="Rainbow" width="400" >
 <img src="Documenten/images/Readme/mood%20images%201.jpg" alt="mood image 1" width="400" >
 <img src="Documenten/images/Readme/neopixel.jpg" alt="mood image 1" width="400" height = "200" ></br>
+
+## Link to video and powerpoint
+
+https://vivesonline-my.sharepoint.com/:f:/g/personal/r0937303_student_vives_be/EpYM_1HZu6NDgFsA1ULMHWIBT6pIUGCs6AUFglGCNppjEg?e=jZTypN
 <img src="Documenten/images/Readme/first%20demo.jpg" alt="mood image 1" width="400" >
 <img src="Documenten/images/Readme/kabelGoot.jpg" alt="mood image 1" width="250" >
