@@ -66,10 +66,10 @@ These are the required software and hardware
 
 Problems
 
-1. Sensors kunnen niet accuraat meten op grotere afstanden
-2. Voltage drop op ledstrip
-3. Communicatie tussen sensoren
-4. Hoe ledstrip omhoog houden
+1. Sensors cannot measure accurately at greater distances
+2. Voltage drop on led strip
+3. Communication between sensors
+4. How to hold up led strip
 
 ## FAQ
 
