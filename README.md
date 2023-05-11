@@ -98,4 +98,4 @@ A bridge over the minnewater in 2019 </br>
 
 ## Link to video and powerpoint
 
-https://vivesonline-my.sharepoint.com/:f:/g/personal/r0937303_student_vives_be/EpYM_1HZu6NDgFsA1ULMHWIBClzqt1kq5hDknEuB2TmHIw?e=6n8yay
+Download our powerpoint and video [here](https://vivesonline-my.sharepoint.com/:f:/g/personal/r0937303_student_vives_be/EpYM_1HZu6NDgFsA1ULMHWIBClzqt1kq5hDknEuB2TmHIw?e=6n8yay)
